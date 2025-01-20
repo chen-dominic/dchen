@@ -9,9 +9,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: '#18181c',
+        secondary: '#9a77c7'
       },
+      fontFamily:{
+        poppins: ["Poppins", 'sans-serif'],
+      }
     },
   },
   plugins: [],
