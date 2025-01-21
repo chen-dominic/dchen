@@ -1,6 +1,6 @@
 export default function Hero() {
     return (
-      <div>
+      <div className="h-screen" id="Hero">
         hi
       </div>
     );
