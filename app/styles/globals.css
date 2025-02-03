@@ -2,5 +2,6 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import 'devicon/devicon.min.css';
 
 /* outline: 1px solid red !important; */

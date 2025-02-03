@@ -9,7 +9,7 @@ const description = ["I am a third-year student at Toronto Metropolitan Universi
 
 export default function Hero() {
     return (
-      <div className="flex font-poppins mx-40 md:mx-12 items-center overflow-hidden min-h-screen" id="Hero">
+      <div className="flex font-poppins mx-40 sm:mx-12 items-center overflow-hidden min-h-screen" id="Hero">
         <div className="flex-1 flex flex-col">
           <div className="flex flex-col gap-6 sm:gap-4">
             <h1 className="text-white font-bold text-5xl sm:text-4xl">Hi there! 😄</h1>
@@ -33,7 +33,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="flex-2">
-          <div className="w-[700px] sm:w-[500px]">
+          <div className=" h-[1000px] w-[700px] sm:h-auto sm:w-[500px]">
             <Image src={Me} height={1000} width={700} layout="responsive" alt="Dominic Chen" className="hover:scale-105 transition-all" />
           </div>
         </div>
