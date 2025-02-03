@@ -9,7 +9,7 @@ const description = ["I am a third-year student at Toronto Metropolitan Universi
 
 export default function Hero() {
     return (
-      <div className="flex font-poppins mx-40 sm:mx-12 items-center overflow-hidden" id="Hero">
+      <div className="flex font-poppins mx-40 md:mx-12 items-center overflow-hidden min-h-screen" id="Hero">
         <div className="flex-1 flex flex-col">
           <div className="flex flex-col gap-6 sm:gap-4">
             <h1 className="text-white font-bold text-5xl sm:text-4xl">Hi there! 😄</h1>
@@ -21,12 +21,15 @@ export default function Hero() {
             </div>
 
             <div className="flex justify-start gap-8 mt-40 sm:mt-20 sm:ml-12">
-            {socials.map((social, index) => (
-                <a key={index} className="text-white bg-secondary rounded-full hover:-translate-y-1 transition-all p-3" href={social.url} target="_blank" rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={social.icon} className="w-6 h-6" />
-                </a>
-              ))}
+              {socials.map((social, index) => (
+                  <a key={index} className="text-white bg-secondary rounded-full hover:-translate-y-1 transition-all p-3" href={social.url} target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={social.icon} className="w-6 h-6" />
+                  </a>
+                ))}
             </div>
+          </div>
+          <div className="bg-transparent outline outline-2 outline-secondary px-4 py-2 w-fit rounded-full text-white font-semibold text-lg mt-20 ml-8 sm:mt-16 hover:bg-secondary transition-colors cursor-pointer">
+            View Resume
           </div>
         </div>
         <div className="flex-2">

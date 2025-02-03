@@ -1,6 +1,6 @@
 export default function About() {
     return (
-      <div className="h-screen bg-secondary" id="About">
+      <div className="" id="About">
         hi
       </div>
     );
