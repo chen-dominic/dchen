@@ -22,12 +22,12 @@ const techstack = {
       },
       {
         name: 'TypeScript',
-        url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+        url: 'https://www.typescriptlang.org/',
         iconClass: 'devicon-typescript-plain',
       },
       {
         name: 'C++',
-        url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+        url: 'https://isocpp.org/',
         iconClass: 'devicon-cplusplus-plain',
       },
       {
@@ -47,36 +47,36 @@ const techstack = {
       },
     ],
     frameworks: [
-        {
-        name: '.NET',
+      {
+        name: '.NET Core',
         url: 'https://dotnet.microsoft.com/',
         iconClass: 'devicon-dotnetcore-plain',
-        },
-        {
+      },
+      {
         name: 'ASP.NET',
         url: 'https://dotnet.microsoft.com/apps/aspnet',
         iconClass: 'devicon-dot-net-plain',
-        },
-        {
+      },
+      {
         name: 'Next.js',
         url: 'https://nextjs.org/',
         iconClass: 'devicon-nextjs-plain',
-        },
-        {
+      },
+      {
         name: 'Flask',
         url: 'https://flask.palletsprojects.com/',
         iconClass: 'devicon-flask-plain',
-        },
-        {
+      },
+      {
         name: 'Express.js',
         url: 'https://expressjs.com/',
         iconClass: 'devicon-express-original',
-        },
-        {
+      },
+      {
         name: 'Bootstrap',
         url: 'https://getbootstrap.com/',
         iconClass: 'devicon-bootstrap-plain',
-        },
+      },
     ],
     libraries: [
       {
@@ -101,52 +101,52 @@ const techstack = {
       },
     ],
     tools: [
-        {
-            name: 'Git',
-            url: 'https://axios-http.com/',
-            iconClass: 'devicon-git-plain',
-        },
-        {
-            name: 'GitHub',
-            url: 'https://axios-http.com/',
-            iconClass: 'devicon-github-plain',
-        },
-        {
-            name: 'Visual Studio',
-            url: 'https://axios-http.com/',
-            iconClass: 'devicon-visualstudio-plain',
-        },
-        {
-            name: 'Visual Studio Code',
-            url: 'https://axios-http.com/',
-            iconClass: 'devicon-vscode-plain',
-        },
-        {
-            name: 'MS SQL Server',
-            url: 'https://axios-http.com/',
-            iconClass: 'devicon-microsoftsqlserver-plain',
-        },
-        {
-            name: 'Postman',
-            url: 'https://axios-http.com/',
-            iconClass: 'devicon-postman-plain',
-        },
-        {
-            name: 'Azure DevOps',
-            url: 'https://axios-http.com/',
-            iconClass: 'devicon-azuredevops-plain',
-        },
-        {
-            name: 'Eclipse',
-            url: 'https://axios-http.com/',
-            iconClass: 'devicon-eclipse-plain',
-        },
-        {
-            name: 'Figma',
-            url: 'https://axios-http.com/',
-            iconClass: 'devicon-figma-plain',
-        },
-    ]
+      {
+        name: 'Git',
+        url: 'https://git-scm.com/',
+        iconClass: 'devicon-git-plain',
+      },
+      {
+        name: 'GitHub',
+        url: 'https://github.com/',
+        iconClass: 'devicon-github-plain',
+      },
+      {
+        name: 'Visual Studio',
+        url: 'https://visualstudio.microsoft.com/',
+        iconClass: 'devicon-visualstudio-plain',
+      },
+      {
+        name: 'Visual Studio Code',
+        url: 'https://code.visualstudio.com/',
+        iconClass: 'devicon-vscode-plain',
+      },
+      {
+        name: 'MS SQL Server',
+        url: 'https://www.microsoft.com/en-us/sql-server',
+        iconClass: 'devicon-microsoftsqlserver-plain',
+      },
+      {
+        name: 'Postman',
+        url: 'https://www.postman.com/',
+        iconClass: 'devicon-postman-plain',
+      },
+      {
+        name: 'Azure DevOps',
+        url: 'https://azure.microsoft.com/en-us/services/devops/',
+        iconClass: 'devicon-azuredevops-plain',
+      },
+      {
+        name: 'Eclipse',
+        url: 'https://www.eclipse.org/',
+        iconClass: 'devicon-eclipse-plain',
+      },
+      {
+        name: 'Figma',
+        url: 'https://www.figma.com/',
+        iconClass: 'devicon-figma-plain',
+      },
+    ],
   };
   
   export default techstack;
