@@ -21,7 +21,7 @@ export default function Hero() {
 
             <div className="flex justify-start gap-8 mt-40">
               <a className="text-white bg-secondary rounded-full hover:-translate-y-1 transition-all p-3" href="#Hero">
-                <FontAwesomeIcon icon="instagram" className="w-6 h-6" />
+                <FontAwesomeIcon icon={['fab','instagram']} className="w-6 h-6" />
               </a>
             </div>
           </div>
