@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Me from "../../public/me.png"
 import Image from "next/image";
 import socials from "../data/socials";
+import paths from "../data/paths";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 const description = ["I am a third-year student at Toronto Metropolitan University 👨‍🎓.",
                     "I enjoy full stack web development and learning new skills!",
@@ -28,9 +30,14 @@ export default function Hero() {
                 ))}
             </div>
           </div>
-          <div className="bg-transparent outline outline-2 outline-secondary px-4 py-2 w-fit rounded-full text-white font-semibold text-lg mt-20 ml-8 sm:mt-16 hover:bg-secondary transition-colors cursor-pointer">
-            View Resume
-          </div>
+          <a href={paths.resume} target="_blank" className="flex w-fit outline outline-2 outline-secondary rounded-full items-center text-white mt-20 ml-8 sm:mt-16 hover:bg-secondary hover:outline-none transition-colors cursor-pointer group">
+            <h1 className="font-semibold text-lg bg-transparent px-8 py-2 w-fit">
+              View Resume
+            </h1>
+            <div className="px-4 py-4 bg-secondary rounded-full group-hover:bg-offSecondary transition-colors">
+              <FontAwesomeIcon icon={faExternalLinkAlt} className="w-5 h-5" />
+            </div>
+          </a>
         </div>
         <div className="flex-2">
           <div className=" h-[1000px] w-[700px] sm:h-auto sm:w-[500px]">
