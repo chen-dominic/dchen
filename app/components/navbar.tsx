@@ -1,16 +1,15 @@
 import Image from "next/image";
 import Logo from "../../public/logo.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
     return (
-      <div className="sticky top-0 flex justify-between px-40 py-8 font-poppins">
+      <div className="sticky top-4 flex justify-between mx-40 my-8 px-8 py-4 font-poppins bg-opacity-50 bg-black rounded-full z-50">
         <div className="flex-1 text-white flex items-center gap-16 font-semibold text-2xl">
             <Image 
                 src={Logo}
-                width={60}
-                height={60}
+                width={50}
+                height={50}
                 alt="logo"
             />
             <h1>chen-dominic</h1>
