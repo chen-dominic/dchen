@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Logo from "../../public/logo.png"
+import paths from "../data/paths";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
@@ -9,7 +9,7 @@ export default function Navbar() {
         <div className="flex-1 text-white flex items-center gap-16 font-semibold text-2xl sm:text-lg">
           <div className="w-12 h-12 sm:w-10 sm:h-10">
             <Image 
-                src={Logo}
+                src={paths.logo}
                 layout="responsive"
                 width={50}
                 height={50}

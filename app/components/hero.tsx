@@ -1,5 +1,4 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Me from "../../public/me.png"
 import Image from "next/image";
 import socials from "../data/socials";
 import paths from "../data/paths";
@@ -41,7 +40,7 @@ export default function Hero() {
         </div>
         <div className="flex-2">
           <div className=" h-[1000px] w-[700px] sm:h-auto sm:w-[500px]">
-            <Image src={Me} height={1000} width={700} layout="responsive" alt="Dominic Chen" className="hover:scale-105 transition-all" />
+            <Image src={paths.me} height={1000} width={700} layout="responsive" alt="Dominic Chen" className="hover:scale-105 transition-all" />
           </div>
         </div>
       </div>
