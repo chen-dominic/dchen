@@ -8,9 +8,9 @@ const description = ["I am a third-year student at Toronto Metropolitan Universi
 
 export default function Hero() {
     return (
-      <div className="flex font-poppins mx-40 items-center overflow-hidden" id="Hero">
+      <div className="flex font-poppins mx-40 sm:mx-12 items-center overflow-hidden" id="Hero">
         <div className="flex-1 flex flex-col">
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 sm:gap-4">
             <h1 className="text-white font-bold text-5xl">Hi there! 😄</h1>
             <h1 className="text-white font-bold text-4xl">I am <span className="text-secondary">Dominic Chen</span></h1>
             <div className="text-white flex flex-col gap-2 text-xl mt-4">
