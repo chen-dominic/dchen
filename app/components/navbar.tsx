@@ -2,11 +2,20 @@ import Image from "next/image";
 import paths from "../data/paths";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import navItems from "../data/nav-items";
 
 export default function Navbar() {
     return (
-      <div className="sticky top-4 flex justify-between mx-40 sm:mx-8 my-8 sm:my-4 px-8 py-4 sm:py-2 font-poppins bg-opacity-50 bg-black rounded-full z-50">
-        <div className="flex-1 text-white flex items-center gap-16 font-semibold text-2xl sm:text-lg">
+      <div className="md:sticky md:top-4 fixed bottom-0 
+                      flex justify-between 
+                      2xl:mx-40 2xl:my-8 2xl:py-4 
+                      md:mx-8 md:my-4 md:py-2 px-8 py-2
+                      md:w-auto w-screen
+                      font-poppins 
+                      md:bg-opacity-50 bg-black md:rounded-full 
+                      bg-opacity-80 rounded-t-3xl
+                      z-50">
+        <div className="flex-1 text-white md:flex hidden items-center gap-16 font-semibold text-2xl sm:text-lg">
           <div className="w-12 h-12 sm:w-10 sm:h-10">
             <Image 
                 src={paths.logo}
@@ -18,27 +27,14 @@ export default function Navbar() {
           </div>
           <h1>chen-dominic</h1>
         </div>
-        <div className="flex-1 items-center justify-end gap-12 flex">
-          <Link href={"#Hero"}>
+        <div className="flex-1 items-center md:justify-end justify-center gap-12 flex">
+          {navItems.map((navItem, index) => (
+            <Link href={navItem.location} key={index}>
             <div className="text-white bg-secondary rounded-full hover:text-secondary hover:bg-white transition-colors p-4 sm:p-3" >
-              <FontAwesomeIcon icon="home" className="w-6 h-6 sm:w-4 sm:h-4" />
+              <FontAwesomeIcon icon={navItem.icon} className="2xl:w-6 2xl:h-6 w-4 h-4" />
             </div>
-          </Link>
-          <Link href={"#About"}>
-            <div className="text-white bg-secondary rounded-full hover:text-secondary hover:bg-white transition-colors p-4 sm:p-3" >
-              <FontAwesomeIcon icon="user" className="w-6 h-6 sm:w-4 sm:h-4"  />
-            </div>
-          </Link>
-          <Link href={"#Projects"}>
-            <div className="text-white bg-secondary rounded-full hover:text-secondary hover:bg-white transition-colors p-4 sm:p-3" >
-              <FontAwesomeIcon icon="code" className="w-6 h-6 sm:w-4 sm:h-4" />
-            </div>
-          </Link>
-          <Link href={"#Contact"}>
-            <div className="text-white bg-secondary rounded-full hover:text-secondary hover:bg-white transition-colors p-4 sm:p-3" >
-              <FontAwesomeIcon icon="address-card" className="w-6 h-6 sm:w-4 sm:h-4"  />
-            </div>
-          </Link>
+            </Link>
+            ))}
         </div>
       </div>
     );

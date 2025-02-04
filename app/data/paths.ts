@@ -1,9 +1,8 @@
-import { log } from "console";
-
 const paths = {
-    resume: '/Dominic_Chen_Resume.pdf',
+    resume: 'Dominic-Chen-Resume.pdf',
     me: '/me.png',
     logo: '/logo.png',
+    meFr: '/me-fr.jpeg',
 }
 
 export default paths;

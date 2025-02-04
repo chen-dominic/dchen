@@ -46,7 +46,7 @@ const techstack = {
         iconClass: 'devicon-azuresqldatabase-plain',
       },
     ],
-    frameworks: [
+    frameworksLbraries: [
       {
         name: '.NET Core',
         url: 'https://dotnet.microsoft.com/',
@@ -77,8 +77,6 @@ const techstack = {
         url: 'https://getbootstrap.com/',
         iconClass: 'devicon-bootstrap-plain',
       },
-    ],
-    libraries: [
       {
         name: 'React',
         url: 'https://reactjs.org/',
@@ -93,11 +91,6 @@ const techstack = {
         name: 'jQuery',
         url: 'https://jquery.com/',
         iconClass: 'devicon-jquery-plain',
-      },
-      {
-        name: 'Axios',
-        url: 'https://axios-http.com/',
-        iconClass: 'devicon-axios-plain',
       },
     ],
     tools: [
@@ -117,7 +110,7 @@ const techstack = {
         iconClass: 'devicon-visualstudio-plain',
       },
       {
-        name: 'Visual Studio Code',
+        name: 'VS Code',
         url: 'https://code.visualstudio.com/',
         iconClass: 'devicon-vscode-plain',
       },
