@@ -11,9 +11,9 @@ const navItems = [
     location: '#About',
   },
   {
-    name: 'Projects',
+    name: 'Work',
     icon: faCode,
-    location: '#Projects',
+    location: '#Work',
   },
   {
     name: 'Contact',

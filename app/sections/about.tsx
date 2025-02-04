@@ -17,9 +17,9 @@ export default function About() {
               <Image src={paths.meFr} width={500} height={500} layout="responsive" className="rounded-full" alt="Dominic Chen" /> {/* Adjusted width and height */}
             </div>
           </div>
-          <div className="flex-1 flex flex-col justify-center">
-            <p className="text-white  md:text-xl text-md mt-4">{aboutText}</p> <br />
-            <p className="text-white  md:text-xl text-md mt-4">
+          <div className="flex-1 flex flex-col justify-center text-lightText">
+            <p className=" md:text-xl text-md mt-4">{aboutText}</p> <br />
+            <p className=" md:text-xl text-md mt-4">
               I am currently a .NET Software Developer at 
               <a href='https://www.fgfbrands.com/' className='text-secondary font-bold hover:text-offSecondary'> FGF Brands </a> 
               with experience in building web APIs, working with SQL databases, and developing full stack applications! 🚀

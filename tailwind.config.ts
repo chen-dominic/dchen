@@ -13,6 +13,7 @@ export default {
         secondary: '#9a77c7',
         offSecondary: '#b3a3c7',
         offPrimary: '#303036',
+        lightText: "#dfdee0",
       },
       fontFamily:{
         poppins: ["Poppins", 'sans-serif'],
