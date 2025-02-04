@@ -5,19 +5,19 @@ import paths from "../data/paths"
 
 export default function Experience(){
     return (
-        <div className="flex my-8 text-lightText" id="Experience">
-            <div className="flex-1 mx-4 bg-offPrimary p-4 rounded-3xl transition-all group">
+        <div className="flex md:flex-row flex-col md:gap-0 gap-4 my-8 text-lightText" id="Experience">
+            <div className="flex-1 md:mx-4 mx-0 bg-offPrimary p-4 rounded-3xl transition-all group">
                 <div className="flex">
                     <div className="flex items-center flex-col">
                         <div className="bg-secondary rounded-full p-2">
                             <FontAwesomeIcon icon={faGraduationCap} className="text-white w-8 h-8" />
                         </div>
-                        <div className="w-[2px] h-full bg-lightText group-hover:bg-secondary transition-all" />
+                        <div className="w-[1px] h-full bg-gray-600 group-hover:bg-secondary transition-all" />
                     </div>
                     <div className="flex flex-col ml-4">
-                        <h1 className="text-white font-bold text-2xl pb-2 uppercase group-hover:text-secondary transition-all">Education</h1>
+                        <h1 className="text-white font-bold text-2xl pb-2 uppercase group-hover:text-secondary transition-all md:block hidden">Education</h1>
                         {experiences.education.map((item, index) => (
-                            <div className="text-lightText py-4 border-t border-primary" key={index}>
+                            <div className="text-lightText md:py-4 py-0  md:border-t md:border-b-0 border-b border-primary" key={index}>
                                 <h1 className="text-white text-xl font-bold">{item.location}</h1>
                                 <h1 className="text-lg font-semibold">{item.title}</h1>
                                 <h1 className="font-normal">{item.subtitle}</h1>
@@ -34,18 +34,18 @@ export default function Experience(){
                 </div>
             </div>
 
-            <div className="flex-1 mx-4 bg-offPrimary p-4 rounded-3xl transition-all group">
+            <div className="flex-1 md:mx-4 mx-0 bg-offPrimary p-4 rounded-3xl transition-all group">
                 <div className="flex">
                     <div className="flex items-center flex-col">
                         <div className="bg-secondary rounded-full p-2">
                             <FontAwesomeIcon icon={faLaptopCode} className="text-white w-8 h-8" />
                         </div>
-                        <div className="w-[2px] h-full bg-lightText group-hover:bg-secondary transition-all" />
+                        <div className="w-[1px] h-full bg-gray-600 group-hover:bg-secondary transition-all" />
                     </div>
                     <div className="flex flex-col ml-4">
-                        <h1 className="text-white font-bold text-2xl pb-2 uppercase group-hover:text-secondary transition-all">Professional</h1>
+                        <h1 className="text-white font-bold text-2xl pb-2 uppercase group-hover:text-secondary transition-all md:block hidden">Professional</h1>
                         {experiences.professional.map((item, index) => (
-                            <div className="text-lightText py-4 border-t border-primary" key={index}>
+                            <div className="text-lightText md:py-4 py-0 md:border-t md:border-b-0 border-b border-primary" key={index}>
                                 <h1 className="text-white text-xl font-bold">{item.title}</h1>
                                 <h1 className="text-lg font-semibold">{item.location}</h1>
                                 {item.description.map((desc, index) => (
