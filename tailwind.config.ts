@@ -12,7 +12,7 @@ export default {
         primary: '#18181c',
         secondary: '#9a77c7',
         offSecondary: '#b3a3c7',
-        offPrimary: '#303036',
+        offPrimary: '#2a2a2e',
         lightText: "#dfdee0",
       },
       fontFamily:{

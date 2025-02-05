@@ -1,3 +1,4 @@
+import { url } from "inspector";
 import paths from "./paths";
 
 const experiences = {
@@ -6,9 +7,13 @@ const experiences = {
             title: "Bachelor of Science (Honours)",
             subtitle: "Computer Science & Co-op, Minoring Cyber Studies",
             location: "Toronto Metropolitan University",
-            date: "2022 - Present",
-            grade: "CGPA: 4.1 / 4.33",
-            src: paths.tmu
+            date: "SEPT 2022 - Present",
+            grade: "GPA: 4.1 / 4.33",
+            description: [
+                "Relevant Coursework: Software Engineering, Data Structure, Cyber Security, Web Development, Operating Systems",
+            ],
+            src: paths.tmu,
+            url: "https://www.torontomu.ca/programs/undergraduate/computer-science/",
         },
     ],
     professional: [
@@ -21,7 +26,8 @@ const experiences = {
                 "Worked with MS SQL Server databases to store and manage data.",
                 "Developed cloud applications using Power Platform and Azure services.",
             ],
-            src: paths.fgf
+            src: paths.fgf,
+            url: "https://www.fgfbrands.com/",
         }
     ]
 };

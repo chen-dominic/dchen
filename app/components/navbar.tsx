@@ -14,7 +14,8 @@ export default function Navbar() {
                       font-poppins 
                       md:bg-opacity-50 bg-black md:rounded-full 
                       bg-opacity-80 rounded-t-3xl
-                      z-50">
+                      z-50
+                      md:hover:bg-opacity-100 transition-all">
         <div className="flex-1 text-white md:flex hidden items-center gap-16 font-semibold text-2xl sm:text-lg">
           <div className="w-12 h-12 sm:w-10 sm:h-10">
             <Image 
