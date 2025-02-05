@@ -21,7 +21,7 @@ export default function About() {
             <p className=" md:text-xl text-lg md:mt-4 mt-2">{aboutText}</p> <br />
             <p className=" md:text-xl text-lg md:mt-4 mt-2">
               I am currently a .NET Software Developer at 
-              <a href='https://www.fgfbrands.com/' className='text-secondary font-bold hover:text-offSecondary'> FGF Brands </a> 
+              <a href='https://www.fgfbrands.com/' className='text-secondary font-bold hover:text-offSecondary' target="_blank"> FGF Brands </a> 
               with experience in building web APIs, working with SQL databases, and developing full stack applications! 🚀
             </p>
             <div className=" md:flex hidden">
