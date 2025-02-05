@@ -131,7 +131,7 @@ const techstack = {
       },
       eclipse: {
         name: 'Eclipse',
-        url: 'https://www.eclipse.org/',
+        url: 'https://eclipseide.org/',
         iconClass: 'devicon-eclipse-plain',
       },
       figma: {

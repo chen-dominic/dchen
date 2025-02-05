@@ -31,7 +31,7 @@ export default function Navbar() {
         <div className="flex-1 items-center md:justify-end justify-center gap-12 flex">
           {navItems.map((navItem, index) => (
             <Link href={navItem.location} key={index}>
-            <div className="text-white bg-secondary rounded-full hover:text-secondary hover:bg-white transition-colors p-4 sm:p-3" >
+            <div className="text-white bg-secondary rounded-full hover:text-secondary hover:bg-white transition-colors p-4 sm:p-3 flex items-center justify-center" >
               <FontAwesomeIcon icon={navItem.icon} className="2xl:w-6 2xl:h-6 w-4 h-4" />
             </div>
             </Link>
