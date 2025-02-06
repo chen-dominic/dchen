@@ -22,10 +22,105 @@ const projects = {
                 },
                 {
                     icon: faYoutube,
-                    url: "https://devpost.com/software/ecodex-76vnu2?ref_content=my-projects-tab&ref_feature=my_projects",
+                    url: "https://www.youtube.com/watch?v=7_p6hZmhYNA4",
                 }
             ],
-            thumbnail: "https://www.youtube.com/watch?v=7_p6hZmhYNA4",
+            thumbnail: paths.ecodex,
+        },
+        {
+            title: "EcoDex",
+            subtitle: "A gamified platform that helps users understand and manage waste more effectively",
+            techUsed:   [languages.javascript,languages.python,frameworksLbraries.nextjs,
+                        frameworksLbraries.tailwind,frameworksLbraries.flask,frameworksLbraries, 
+                        {name: "MongoDB", url: "https://www.mongodb.com/", iconClass: "devicon-mongodb-plain"}],
+            github: "https://github.com/josephleungg/EcoDex",
+            links: [
+                {
+                    icon: faDev,
+                    url: "https://devpost.com/software/ecodex-76vnu2?ref_content=my-projects-tab&ref_feature=my_projects",
+                },
+                {
+                    icon: faYoutube,
+                    url: "https://www.youtube.com/watch?v=7_p6hZmhYNA4",
+                }
+            ],
+            thumbnail: paths.ecodex,
+        },
+        {
+            title: "EcoDex",
+            subtitle: "A gamified platform that helps users understand and manage waste more effectively",
+            techUsed:   [languages.javascript,languages.python,frameworksLbraries.nextjs,
+                        frameworksLbraries.tailwind,frameworksLbraries.flask,frameworksLbraries, 
+                        {name: "MongoDB", url: "https://www.mongodb.com/", iconClass: "devicon-mongodb-plain"}],
+            github: "https://github.com/josephleungg/EcoDex",
+            links: [
+                {
+                    icon: faDev,
+                    url: "https://devpost.com/software/ecodex-76vnu2?ref_content=my-projects-tab&ref_feature=my_projects",
+                },
+                {
+                    icon: faYoutube,
+                    url: "https://www.youtube.com/watch?v=7_p6hZmhYNA4",
+                }
+            ],
+            thumbnail: paths.ecodex,
+        },
+        {
+            title: "EcoDex",
+            subtitle: "A gamified platform that helps users understand and manage waste more effectively",
+            techUsed:   [languages.javascript,languages.python,frameworksLbraries.nextjs,
+                        frameworksLbraries.tailwind,frameworksLbraries.flask,frameworksLbraries, 
+                        {name: "MongoDB", url: "https://www.mongodb.com/", iconClass: "devicon-mongodb-plain"}],
+            github: "https://github.com/josephleungg/EcoDex",
+            links: [
+                {
+                    icon: faDev,
+                    url: "https://devpost.com/software/ecodex-76vnu2?ref_content=my-projects-tab&ref_feature=my_projects",
+                },
+                {
+                    icon: faYoutube,
+                    url: "https://www.youtube.com/watch?v=7_p6hZmhYNA4",
+                }
+            ],
+            thumbnail: paths.ecodex,
+        },
+        {
+            title: "EcoDex",
+            subtitle: "A gamified platform that helps users understand and manage waste more effectively",
+            techUsed:   [languages.javascript,languages.python,frameworksLbraries.nextjs,
+                        frameworksLbraries.tailwind,frameworksLbraries.flask,frameworksLbraries, 
+                        {name: "MongoDB", url: "https://www.mongodb.com/", iconClass: "devicon-mongodb-plain"}],
+            github: "https://github.com/josephleungg/EcoDex",
+            links: [
+                {
+                    icon: faDev,
+                    url: "https://devpost.com/software/ecodex-76vnu2?ref_content=my-projects-tab&ref_feature=my_projects",
+                },
+                {
+                    icon: faYoutube,
+                    url: "https://www.youtube.com/watch?v=7_p6hZmhYNA4",
+                }
+            ],
+            thumbnail: paths.ecodex,
+        },
+        {
+            title: "EcoDex",
+            subtitle: "A gamified platform that helps users understand and manage waste more effectively",
+            techUsed:   [languages.javascript,languages.python,frameworksLbraries.nextjs,
+                        frameworksLbraries.tailwind,frameworksLbraries.flask,frameworksLbraries, 
+                        {name: "MongoDB", url: "https://www.mongodb.com/", iconClass: "devicon-mongodb-plain"}],
+            github: "https://github.com/josephleungg/EcoDex",
+            links: [
+                {
+                    icon: faDev,
+                    url: "https://devpost.com/software/ecodex-76vnu2?ref_content=my-projects-tab&ref_feature=my_projects",
+                },
+                {
+                    icon: faYoutube,
+                    url: "https://www.youtube.com/watch?v=7_p6hZmhYNA4",
+                }
+            ],
+            thumbnail: paths.ecodex,
         },
         {
             title: "",
@@ -38,7 +133,7 @@ const projects = {
                     url: "",
                 }
             ],
-            thumbnail: "",
+            thumbnail: "a",
         },
     ],
     artwork: [

@@ -12,7 +12,7 @@ const description = ["I am a third-year student at Toronto Metropolitan Universi
 
 export default function Hero() {
     return (
-      <div className="flex font-poppins 2xl:mx-40 md:mx-24 md:flex-row md:pt-8 items-center overflow-visible flex-col mx-4 pt-12" id="Hero">
+      <div className="flex font-poppins 2xl:mx-40 md:mx-24 md:flex-row 2xl:pt-0 md:pt-12 items-center overflow-visible flex-col mx-4 pt-12" id="Hero">
         <div className="flex-1 flex flex-col">
           <div className="flex flex-col md:gap-6 gap-2">
             <h1 className="text-white font-bold md:text-5xl text-4xl">Hi there! 😄</h1>
@@ -27,9 +27,9 @@ export default function Hero() {
             <SocialLinks />
           </div>
         </div>
-        <div className="flex-2 2xl:pt-24 md:pt-0 pt-6">
+        <div className="flex-2 2xl:pt-0 md:pt-0 pt-6">
           <div className="2xl:w-[700px] md:w-[500px] h-auto w-[300px]">
-            <Image src={paths.me} height={1000} width={700} layout="responsive" alt="Dominic Chen" className="hover:scale-105 transition-all" />
+            <Image src={paths.me} height={100} width={700} layout="responsive" alt="Dominic Chen" className="hover:scale-105 transition-all" />
           </div>
         </div>
       </div>

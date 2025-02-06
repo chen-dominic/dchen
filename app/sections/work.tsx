@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CodeProjects from "../components/codeProjects";
 import ArtProjects from "../components/artProjects";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,11 +9,21 @@ import { faCode, faPalette } from "@fortawesome/free-solid-svg-icons";
 export default function Work() {
 
     const [projectType, setProjectType] = useState("coding");
+    const [fade, setFade] = useState(false);
+    const animationDuration = 200;
 
     const toggleProjectType = (type: string) => {
-      setProjectType(type);
-
+      if (projectType === type) return;
+      setFade(false);
+      setTimeout(() => {
+        setProjectType(type);
+        setFade(true);
+      }, animationDuration); // Duration of fade-out
     }
+
+    useEffect(() => {
+      setFade(true);
+    }, []);
 
     return (
       <div className="2xl:mx-40 md:mx-24 mx-4 pt-20 flex flex-col items-center" id="Work">
@@ -28,9 +38,9 @@ export default function Work() {
             <FontAwesomeIcon icon={faPalette} className="h-6 w-6" />
           </div>
         </div>
-          <div className="flex flex-col items-center">
+        <div className={`flex flex-col overflow-visible items-center transition-all duration-[${animationDuration}] ${fade ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-40'}`}>
           {projectType === "coding" ? <CodeProjects /> : <ArtProjects />}
-          </div>
+        </div>
       </div>
     );
   }
