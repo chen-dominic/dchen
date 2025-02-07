@@ -43,7 +43,7 @@ const projects = {
                     url: "https://www.youtube.com/watch?v=AgtgF8Z4h54",
                 }
             ],
-            thumbnail: "https://raw.githubusercontent.com/jarell-santella/memorylane/refs/heads/main/client/src/assets/memory-lane-logo.png",
+            thumbnail: "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/739/116/datas/gallery.jpg",
         },
         {
             title: "",
