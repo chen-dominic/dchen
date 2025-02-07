@@ -140,6 +140,13 @@ const techstack = {
         iconClass: 'devicon-figma-plain',
       },
     },
+    other: {
+      axios: {
+        name: 'Axios',
+        url: 'https://www.axios.com/',
+        iconClass: 'devicon-axios-plain',
+      },
+    }
   };
   
   export default techstack;

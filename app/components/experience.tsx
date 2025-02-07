@@ -9,7 +9,7 @@ export default function Experience(){
             <div className="flex-1 md:mx-4 mx-0 bg-offPrimary p-4 rounded-3xl transition-all group">
                 <div className="flex">
                     <div className="flex items-center flex-col">
-                        <div className="bg-secondary rounded-full p-2">
+                        <div className="bg-secondary rounded-full p-2 flex items-center justify-center">
                             <FontAwesomeIcon icon={faGraduationCap} className="text-white w-8 h-8" />
                         </div>
                         <div className="w-[1px] h-full bg-gray-600 group-hover:bg-secondary transition-all" />
@@ -44,7 +44,7 @@ export default function Experience(){
             <div className="flex-1 md:mx-4 mx-0 bg-offPrimary p-4 rounded-3xl transition-all group">
                 <div className="flex">
                     <div className="flex items-center flex-col">
-                        <div className="bg-secondary rounded-full p-2">
+                        <div className="bg-secondary rounded-full p-2 flex items-center justify-center">
                             <FontAwesomeIcon icon={faLaptopCode} className="text-white w-8 h-8" />
                         </div>
                         <div className="w-[1px] h-full bg-gray-600 group-hover:bg-secondary transition-all" />
