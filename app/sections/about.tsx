@@ -1,8 +1,8 @@
-import Techstack from "../components/techstack";
+import Techstack from "../../components/techstack";
 import Image from "next/image";
 import paths from "../data/paths";
-import ResumeButton from "../components/resume-button";
-import Experience from "../components/experience";
+import ResumeButton from "../../components/resume-button";
+import Experience from "../../components/experience";
 
 export default function About() {
 

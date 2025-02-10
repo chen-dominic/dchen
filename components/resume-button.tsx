@@ -1,5 +1,5 @@
 import Link from "next/link"
-import paths from "../data/paths"
+import paths from "../app/data/paths"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons"
 

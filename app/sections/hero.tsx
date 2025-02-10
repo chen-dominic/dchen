@@ -2,8 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import socials from "../data/socials";
 import paths from "../data/paths";
-import ResumeButton from "../components/resume-button";
-import SocialLinks from "../components/social-links";
+import ResumeButton from "../../components/resume-button";
+import SocialLinks from "../../components/social-links";
 
 
 const description = ["I am a third-year student at Toronto Metropolitan University 👨‍🎓.",

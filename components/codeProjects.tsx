@@ -1,4 +1,4 @@
-import projects from "../data/projects";
+import projects from "../app/data/projects";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function CodeProjects() {

@@ -5,6 +5,7 @@ import "../fontawesome";
 export const metadata: Metadata = {
   title: "Dominic Chen",
   description: "See Dominic Chen's awesome projects!",
+  icons: [{ url: './favicon.ico', rel: 'icon' }]
 };
 
 export default function RootLayout({

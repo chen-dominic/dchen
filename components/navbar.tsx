@@ -1,8 +1,8 @@
 import Image from "next/image";
-import paths from "../data/paths";
+import paths from "../app/data/paths";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import navItems from "../data/nav-items";
+import navItems from "../app/data/nav-items";
 
 export default function Navbar() {
     return (

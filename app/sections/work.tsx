@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import CodeProjects from "../components/codeProjects";
-import ArtProjects from "../components/artProjects";
+import CodeProjects from "../../components/codeProjects";
+import ArtProjects from "../../components/artProjects";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode, faPalette } from "@fortawesome/free-solid-svg-icons";
 

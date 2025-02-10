@@ -1,4 +1,4 @@
-import techstack from "../data/tech"
+import techstack from "../app/data/tech"
 
 export default function Techstack(){
     return(

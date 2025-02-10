@@ -1,4 +1,4 @@
-import projects from "../data/projects";
+import projects from "../app/data/projects";
 
 export default function ArtProjects() {
     return(
