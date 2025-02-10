@@ -32,7 +32,7 @@ export default function About() {
 
         <h1 className="text-white text-center md:text-4xl md:mt-0 mt-8 tracking-wider md text-3xl font-black">EXPERIENCE</h1>
         <Experience />
-        <h1 className="text-white text-center md:text-4xl tracking-wider text-3xl font-black">TECH STACK</h1>
+        <h1 className="text-white text-center md:text-4xl tracking-wider text-3xl font-black">SKILLS</h1>
         <Techstack />
       </div>
     );
