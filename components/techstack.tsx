@@ -1,4 +1,18 @@
-import techstack from "../app/data/tech"
+import techstacks from "../app/data/tech"
+
+interface Tech {
+    name: string;
+    url: string;
+    iconClass: string;
+}
+
+interface TechStack {
+    languages: { [key: string]: Tech };
+    frameworksLbraries: { [key: string]: Tech };
+    tools: { [key: string]: Tech };
+}
+
+const techstack: TechStack = techstacks;
 
 export default function Techstack(){
     return(
