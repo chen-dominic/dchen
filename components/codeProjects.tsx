@@ -13,7 +13,7 @@ export default function CodeProjects() {
                     </div>
                     <div className="bg-neutral-600 overflow-hidden rounded-b-2xl p-2 flex flex-col group-hover:h-[200px] transition-all duration-300">
                         <h1 className="text-2xl font-black text-white">{project.title}</h1>
-                        <div className="group-hover:flex hidden flex-col">
+                        <div className="group-hover:opacity-100 opacity-0 flex-col transition-all duration-300 w-96">
                             <p className="text-white">{project.subtitle}</p>
                         </div>
                     </div>
