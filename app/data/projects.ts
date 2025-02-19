@@ -1,7 +1,7 @@
 import techstack from "./tech";
 import paths from "./paths";
 import { faDev } from "@fortawesome/free-brands-svg-icons";
-import { faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faYoutube, faChrome } from "@fortawesome/free-brands-svg-icons";
 
 const languages = techstack.languages;
 const frameworksLbraries = techstack.frameworksLbraries;
@@ -62,20 +62,33 @@ const projects = {
             ],
             thumbnail: "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/739/116/datas/gallery.jpg",
         },
-        
         {
-            title: "",
-            subtitle: "",
-            techUsed:   [],
-            github: "",
+            title: "TMUCSA",
+            subtitle: "The official website of TMUCSA, a social club that promotes student wellbeing through various activities at TMU.",
+            techUsed:   [languages.javascript,frameworksLbraries.nextjs,frameworksLbraries.tailwind,other.firebase],
+            github: "https://github.com/TMUCSA/tmucsa-website",
             links: [
                 {
-                    icon: "",
-                    url: "",
+                    icon: faChrome,
+                    url: "https://tmucsa.netlify.app/",
                 }
             ],
-            thumbnail: "a",
+            thumbnail: "https://ugc.production.linktr.ee/yjpSKwHnRiS6IjbAAtQE_PWLar811KGIJVxM2?io=true&size=avatar-v3_0",
         },
+        
+        // {
+        //     title: "",
+        //     subtitle: "",
+        //     techUsed:   [],
+        //     github: "",
+        //     links: [
+        //         {
+        //             icon: "",
+        //             url: "",
+        //         }
+        //     ],
+        //     thumbnail: "a",
+        // },
     ],
     artwork: [
         {

@@ -146,6 +146,11 @@ const techstack = {
         url: 'https://www.axios.com/',
         iconClass: 'devicon-axios-plain',
       },
+      firebase: {
+        name: 'Firebase',
+        url: 'https://firebase.google.com/',
+        iconClass: 'devicon-firebase-plain'
+      }
     }
   };
   
