@@ -9,7 +9,7 @@ export default function About() {
     const aboutText = "I am a third-year Computer Science student at Toronto Metropolitan University, pursuing my passion in the field. My interests lie in coding 💻, lifting weights 💪🏼, and gaming 🕹️.";
 
     return (
-      <div className="2xl:mx-40 md:mx-24 mx-4 pt-20 overflow-x-hidden" id="About">
+      <div className="mx-4 pt-20 overflow-x-hidden" id="About">
         <h1 className="text-white text-center md:text-6xl tracking-wider text-5xl md:mt-12 mt:6 font-black">WHO'S THIS?</h1>
         <div className="flex md:flex-row flex-col md:py-20 md:px-40 px-8">
           <div className="flex-1 flex md:justify-between justify-center md:m-0 my-4">

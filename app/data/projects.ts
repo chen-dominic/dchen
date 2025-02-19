@@ -10,12 +10,29 @@ const other = techstack.other;
 const projects = {
     coding: [
         {
+            title: "Rotify",
+            subtitle: "Transforms traditional learning materials into dynamic, multi-sensory experiences",
+            techUsed:   [languages.javascript,frameworksLbraries.nextjs,frameworksLbraries.tailwind,frameworksLbraries.expressjs],
+            github: "https://github.com/chen-dominic/Rotify",
+            links: [
+                {
+                    icon: faDev,
+                    url: "https://devpost.com/software/rotify-jn7hul?ref_content=user-portfolio&ref_feature=in_progress",
+                },
+                {
+                    icon: faYoutube,
+                    url: "https://www.youtube.com/watch?v=PjXUOong-DI",
+                },
+            ],
+            thumbnail: "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/259/201/datas/gallery.jpg",
+        },
+        {
             title: "EcoDex",
             subtitle: "A gamified platform that helps users understand and manage waste more effectively",
             techUsed:   [languages.javascript,languages.python,frameworksLbraries.nextjs,
-                        frameworksLbraries.tailwind,frameworksLbraries.flask,frameworksLbraries, 
+                        frameworksLbraries.tailwind,frameworksLbraries.flask,
                         {name: "MongoDB", url: "https://www.mongodb.com/", iconClass: "devicon-mongodb-plain"}],
-            github: "https://github.com/josephleungg/EcoDex",
+            github: "https://github.com/chen-dominic/EcoDex",
             links: [
                 {
                     icon: faDev,
@@ -45,6 +62,7 @@ const projects = {
             ],
             thumbnail: "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/739/116/datas/gallery.jpg",
         },
+        
         {
             title: "",
             subtitle: "",
