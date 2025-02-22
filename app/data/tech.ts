@@ -150,6 +150,11 @@ const techstack = {
         name: 'Firebase',
         url: 'https://firebase.google.com/',
         iconClass: 'devicon-firebase-plain'
+      },
+      reactnative: {
+        name: 'React Native',
+        url: 'https://reactnative.dev/',
+        iconClass: 'devicon-react-plain'
       }
     }
   };
