@@ -34,7 +34,7 @@ export default function CodeProjects() {
                         </div>
                     </div>
                     <div className="bg-transparent overflow-hidden rounded-b-2xl p-2 flex flex-col translate-y-8 group-hover:translate-y-0 transition-all duration-300 h-40 ">
-                        <h1 className="text-4xl group-hover:text-2xl font-bold text-white group-hover:text-secondary font-poppins transition-all duration-300">{project.title}</h1>
+                        <h1 className="text-4xl group-hover:text-2xl font-bold text-white group-hover:text-secondary font-poppins transition-all duration-300 bg-secondary bg-opacity-25 group-hover:bg-transparent px-2 py-3 rounded-2xl text-center">{project.title}</h1>
                         <div className="group-hover:opacity-100 opacity-0 flex-col transition-all duration-300">
                             <p className="text-white">{project.subtitle}</p>
                         </div>

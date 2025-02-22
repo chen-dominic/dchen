@@ -5,6 +5,7 @@ import { faYoutube, faChrome, faGithub } from "@fortawesome/free-brands-svg-icon
 
 const languages = techstack.languages;
 const frameworksLbraries = techstack.frameworksLbraries;
+const tools = techstack.tools;
 const other = techstack.other;
 
 const projects = {
@@ -31,6 +32,19 @@ const projects = {
             thumbnail: "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/259/201/datas/gallery.jpg",
         },
         {
+            title: "ChainVision",
+            subtitle: "A supply chain disruption prediction web application for manufacturing companies",
+            techUsed:   [languages.csharp,languages.javascript,languages.python,languages.sql,frameworksLbraries.netcore],
+            github: "https://github.com/chen-dominic/ChainVision",
+            links: [
+                {
+                    icon: faGithub,
+                    url: "https://github.com/chen-dominic/ChainVision",
+                },
+            ],
+            thumbnail: "https://github.com/chen-dominic/ChainVision/blob/main/ChainVisionApp/ChainVisionApp/wwwroot/images/products.png?raw=true",
+        },
+        {
             title: "EcoDex",
             subtitle: "A gamified platform that helps users understand and manage waste more effectively",
             techUsed:   [languages.javascript,languages.python,frameworksLbraries.nextjs,
@@ -54,6 +68,23 @@ const projects = {
             thumbnail: paths.ecodex,
         },
         {
+            title: "TMUCSA",
+            subtitle: "The official website of TMUCSA, a social club that promotes student wellbeing through various activities at TMU.",
+            techUsed:   [languages.javascript,frameworksLbraries.nextjs,frameworksLbraries.tailwind,other.firebase],
+            github: "https://github.com/TMUCSA/tmucsa-website",
+            links: [
+                {
+                    icon: faGithub,
+                    url: "https://github.com/TMUCSA/tmucsa-website",
+                },
+                {
+                    icon: faChrome,
+                    url: "https://tmucsa.netlify.app/",
+                }
+            ],
+            thumbnail: "https://ugc.production.linktr.ee/yjpSKwHnRiS6IjbAAtQE_PWLar811KGIJVxM2?io=true&size=avatar-v3_0",
+        },
+        {
             title: "Memory Lane",
             subtitle: "A web application that allows users to walk down a lane full of past memories",
             techUsed:   [languages.typescript,frameworksLbraries.react,frameworksLbraries.expressjs,other.axios],
@@ -75,23 +106,6 @@ const projects = {
             thumbnail: "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/739/116/datas/gallery.jpg",
         },
         {
-            title: "TMUCSA",
-            subtitle: "The official website of TMUCSA, a social club that promotes student wellbeing through various activities at TMU.",
-            techUsed:   [languages.javascript,frameworksLbraries.nextjs,frameworksLbraries.tailwind,other.firebase],
-            github: "https://github.com/TMUCSA/tmucsa-website",
-            links: [
-                {
-                    icon: faGithub,
-                    url: "https://github.com/TMUCSA/tmucsa-website",
-                },
-                {
-                    icon: faChrome,
-                    url: "https://tmucsa.netlify.app/",
-                }
-            ],
-            thumbnail: "https://ugc.production.linktr.ee/yjpSKwHnRiS6IjbAAtQE_PWLar811KGIJVxM2?io=true&size=avatar-v3_0",
-        },
-        {
             title: "Smoggle Maps",
             subtitle: "An alternative to Google Maps, with a twist that is intended to help battle CO2 emissions.",
             techUsed:   [languages.javascript,other.reactnative],
@@ -107,6 +121,27 @@ const projects = {
                 },
             ],
             thumbnail: "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/718/006/datas/gallery.jpg",
+        },
+        {
+            title: "self.translate",
+            subtitle: "A revolutionary translation web application that can be utilized by users worldwide",
+            techUsed:   [languages.python],
+            github: "https://github.com/andrearcaina/Self-Translate",
+            links: [
+                {
+                    icon: faGithub,
+                    url: "https://github.com/andrearcaina/Self-Translate",
+                },
+                {
+                    icon: faDev,
+                    url: "https://devpost.com/software/self-translate",
+                },
+                {
+                    icon: faYoutube,
+                    url: "https://www.youtube.com/watch?v=JoMP6ZF_GDI",
+                },
+            ],
+            thumbnail: "https://chen-dominic.github.io/img/port2.png",
         },
         {
             title: "Java Quest",
