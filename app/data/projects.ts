@@ -42,7 +42,7 @@ const projects = {
                     url: "https://github.com/chen-dominic/ChainVision",
                 },
             ],
-            thumbnail: "https://github.com/chen-dominic/ChainVision/blob/main/ChainVisionApp/ChainVisionApp/wwwroot/images/products.png?raw=true",
+            thumbnail: paths.fgf,
         },
         {
             title: "EcoDex",
