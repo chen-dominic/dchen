@@ -12,10 +12,10 @@ export default function Navbar() {
                       md:mx-8 md:my-4 md:py-2 px-8 py-2
                       md:w-auto w-screen
                       font-poppins 
-                      md:bg-opacity-50 bg-black md:rounded-full 
+                      md:bg-opacity-60 bg-black md:rounded-full 
                       bg-opacity-80 rounded-t-3xl
                       z-50
-                      md:hover:bg-opacity-100 transition-all">
+                      md:hover:bg-opacity-100 transition-all duration-300">
         <div className="flex-1 text-white md:flex hidden items-center gap-16 font-semibold text-2xl sm:text-lg">
           <div className="w-12 h-12 sm:w-10 sm:h-10">
             <Image 
