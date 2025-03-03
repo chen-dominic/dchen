@@ -4,10 +4,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function CodeProjects() {
     const codingProjects = projects.coding;
     return(
-        <div className="mx-0 w-screen px-40 h-fit items-center justify-center my-12">
-            <div className="grid grid-cols-4 gap-2 gap-y-6">
+        <div className="mx-0 w-screen lg:px-24 xl:px-40 h-fit items-center justify-center my-12">
+            <div className="flex flex-col items-center justify-center lg:grid lg:grid-cols-4 lg:gap-2 lg:gap-y-6">
             {codingProjects.map((project, index) => (
-                <a href={project.github} target="_blank" className="flex flex-col overflow-hidden transition-all duration-300 rounded-xl cursor-pointer group bg-transparent hover:bg-black hover:bg-opacity-30" key={index}>
+                <a href={project.github} target="_blank" className="flex flex-col overflow-hidden transition-all duration-300 rounded-xl cursor-pointer group bg-transparent hover:bg-black hover:bg-opacity-30 w-full" key={index}>
                     <div className="flex items-center justify-center w-full">
                         <div className="opacity-0 group-hover:opacity-100 translate-y-20 group-hover:translate-y-0 flex flex-row transition-all duration-500 absolute z-10 py-4 px-2 gap-4">
                             {project.techUsed.map((tech,index) => (
@@ -19,7 +19,7 @@ export default function CodeProjects() {
                             ))}
                         </div>
                     </div>
-                    <div className="h-[25vw] overflow-hidden rounded-2xl">
+                    <div className="h-[90vw] lg:h-[25vw] overflow-hidden rounded-2xl">
                         <img src={project.thumbnail} alt={project.title} className="h-full w-full relative object-cover" />
                     </div>
                     <div className="flex items-center justify-center w-full">
@@ -34,7 +34,7 @@ export default function CodeProjects() {
                         </div>
                     </div>
                     <div className="bg-transparent rounded-b-2xl p-0 flex flex-col items-center overflow-visible translate-y-8 group-hover:translate-y-0 transition-all duration-300 h-40 ">
-                        <h1 className="text-3xl group-hover:text-2xl font-bold text-white group-hover:text-secondary font-poppins transition-all duration-300 bg-secondary bg-opacity-10 group-hover:bg-transparent px-2 py-3 rounded-2xl text-center">{project.title}</h1>
+                        <h1 className="text-3xl group-hover:text-2xl font-bold text-white group-hover:text-secondary font-poppins transition-all duration-300 bg-white bg-opacity-5 group-hover:bg-transparent px-2 py-3 text-center">{project.title}</h1>
                         <div className="group-hover:opacity-100 opacity-0 flex-col transition-all duration-300 px-2">
                             <p className="text-white">{project.subtitle}</p>
                         </div>

@@ -177,33 +177,33 @@ const projects = {
     artwork: [
         {
             title: "Depth Design",
-            subtitle: "A monochrone portrait portraying early Chinese culture",
-            imageUrl: "",
+            subtitle: "A monochrome portrait capturing the essence of early Chinese culture.",
+            imageUrl: "https://i.imgur.com/P2Esvsc.png",
         },
         {
             title: "Type Design",
-            subtitle: "A great snack designed to oppose hate against Asians during COVID-19 pandemic",
-            imageUrl: "",
+            subtitle: "A creative design aimed at combating anti-Asian hate during the COVID-19 pandemic.",
+            imageUrl: "https://i.imgur.com/QEKGi7U.png",
         },
         {
             title: "Meal Illustration",
-            subtitle: "Let's take a bit of Asia and it's cusine",
-            imageUrl: "",
+            subtitle: "A vibrant celebration of Asian cuisine, inviting you to take a flavorful bite.",
+            imageUrl: "https://i.imgur.com/rzWMhFa.png",
         },
         {
             title: "Winter Smile",
-            subtitle: "An illustration of a loving couple in the midst of winter",
-            imageUrl: "",
+            subtitle: "An enchanting illustration of a couple sharing a tender moment in the heart of winter.",
+            imageUrl: "https://i.imgur.com/pEnwcDP.png",
         },
         {
-            title: "Where We Started",
-            subtitle: "A moment of the beginning of a great story",
-            imageUrl: "",
+            title: "The Start",
+            subtitle: "A visual representation of the beginning of an extraordinary story.",
+            imageUrl: "https://i.imgur.com/5dBXo10.png",
         },
         {
             title: "Great Escape",
-            subtitle: "Dr. Chen opening a portal to a desirable escape",
-            imageUrl: "",
+            subtitle: "Dr. Chen conjures a portal to a world of wonder and liberation.",
+            imageUrl: "https://i.imgur.com/HUnUsBO.png",
         },
     ]
 }
