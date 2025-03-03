@@ -176,7 +176,34 @@ const projects = {
     ],
     artwork: [
         {
-
+            title: "Depth Design",
+            subtitle: "A monochrone portrait portraying early Chinese culture",
+            imageUrl: "",
+        },
+        {
+            title: "Type Design",
+            subtitle: "A great snack designed to oppose hate against Asians during COVID-19 pandemic",
+            imageUrl: "",
+        },
+        {
+            title: "Meal Illustration",
+            subtitle: "Let's take a bit of Asia and it's cusine",
+            imageUrl: "",
+        },
+        {
+            title: "Winter Smile",
+            subtitle: "An illustration of a loving couple in the midst of winter",
+            imageUrl: "",
+        },
+        {
+            title: "Where We Started",
+            subtitle: "A moment of the beginning of a great story",
+            imageUrl: "",
+        },
+        {
+            title: "Great Escape",
+            subtitle: "Dr. Chen opening a portal to a desirable escape",
+            imageUrl: "",
         },
     ]
 }
