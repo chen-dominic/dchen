@@ -66,7 +66,7 @@ export default function ArtProjects() {
                             <img
                                 src={selectedImage.imageUrl}
                                 alt={selectedImage.title}
-                                className="w-auto max-w-[80vh] h-[90vh] object-contain rounded-lg"
+                                className="w-auto h-[90vh] object-contain rounded-lg"
                             />
                         </a>
                         <div className="overflow-hidden absolute top-0 left-0">
