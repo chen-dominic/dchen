@@ -8,6 +8,10 @@
 /* outline: 1px solid red !important; */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 ::-webkit-scrollbar {
     width: 12px;
     height: 12px;
