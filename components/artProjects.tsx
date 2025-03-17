@@ -33,11 +33,11 @@ export default function ArtProjects() {
     }, [isVisible, selectedImage]);
 
     return (
-        <div className="mx-0 w-screen px-40 h-fit items-center justify-center my-12 font-poppins">
-            <div className="grid grid-cols-3 gap-2 gap-y-6">
+        <div className="mx-0 w-screen px-12 lg:px-40 h-fit items-center justify-center my-12 font-poppins">
+            <div className="grid grid-cols-2 gap-2 lg:grid-cols-3 lg:gap-2 lg:gap-y-6">
                 {artProjects.map((project, index) => (
                     <div
-                        className="w-full h-[25vw] overflow-hidden cursor-pointer rounded-2xl group hover:shadow-secondary shadow-lg transition-all duration-300"
+                        className="w-full h-[40vw] lg:h-[25vw] overflow-hidden cursor-pointer rounded-2xl group hover:shadow-secondary shadow-lg transition-all duration-300"
                         key={index}
                         onClick={() => handleImageClick(project)}
                     >
@@ -56,17 +56,17 @@ export default function ArtProjects() {
                     }`}
                 >
                     <div className="relative w-fit rounded-xl flex">
-                        <button className="absolute top-0 -right-10 z-50" onClick={handleClose}>
+                        <button className="fixed top-8 right-20 lg:top-0 lg:right-10 z-50" onClick={handleClose}>
                             <FontAwesomeIcon
                                 icon={faCircleXmark}
-                                className="w-8 h-8 text-white hover:text-red-300 transition-all duration-300"
+                                className="w-10 h-10 md:w-12 md:h-12 lg:w-8 lg:h-8 text-white hover:text-red-300 transition-all duration-300"
                             />
                         </button>
                         <a href={selectedImage.imageUrl} target="_blank">
                             <img
                                 src={selectedImage.imageUrl}
                                 alt={selectedImage.title}
-                                className="w-auto h-[90vh] object-contain rounded-lg"
+                                className="w-auto h-[70vh] lg:h-[90vh] object-contain rounded-lg"
                             />
                         </a>
                         <div className="overflow-hidden absolute top-0 left-0">
