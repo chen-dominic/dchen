@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState, FormEvent } from 'react';
 
 export default function Contact() {
-  // Form state
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -12,16 +11,13 @@ export default function Contact() {
     message: '',
   });
 
-  // Handle input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Handle form submission
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Here you can add logic to send the form data (e.g., to an API or email service)
     console.log('Form submitted:', formData);
     
     setFormData({ name: '', email: '', subject: '', message: '' });
@@ -29,12 +25,12 @@ export default function Contact() {
   };
 
   return (
-    <div className="mx-4 pt-20 overflow-x-hidden" id="Contact">
+    <div className="mx-4 overflow-x-hidden" id="Contact">
       <h1 className="text-white text-center md:text-6xl tracking-wider text-5xl md:mt-12 mt:6 font-black">
         CONTACT
       </h1>
-      <div className="bg-offPrimary rounded-xl p-4 mx-40 my-12 flex">
-        <div className="flex-1 gap-4 border-r border-white flex justify-center flex-col px-6">
+      <div className="bg-offPrimary rounded-xl p-4 mx-6 md:mx-40 my-12 flex flex-col md:flex-row">
+        <div className="flex-1 gap-4 md:border-r border-white flex justify-center flex-col px-6">
           <h1 className="text-white font-semibold text-xl">Let's get in touch!</h1>
           <p className="text-white font-normal text-base">Feel free to send a message!</p>
           <div className="flex justify-between text-white text-sm">
