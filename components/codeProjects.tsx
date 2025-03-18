@@ -97,7 +97,7 @@ export default function CodeProjects() {
                     {project.title}
                 </h1>
                 <div className="group-hover:opacity-100 opacity-0 flex-col transition-all duration-300 px-5 text-xl lg:text-base lg:px-2">
-                    <p className="text-white">{project.subtitle}</p>
+                    <p className="text-white text-sm">{project.subtitle}</p>
                 </div>
             </div>
         </>
