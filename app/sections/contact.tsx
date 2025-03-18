@@ -2,6 +2,8 @@
 import { faEnvelope, faLocationDot, faPaperPlane, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState, FormEvent } from 'react';
+import emailjs from '@emailjs/browser';
+import paths from '../data/paths';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,21 +13,53 @@ export default function Contact() {
     message: '',
   });
 
+  const [hasMessageSent, setHasMessageSent] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    alert('Message sent! (This is a demo - actual email sending not implemented)');
+    setIsSending(true);
+    setError(null);
+
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '';
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '';
+    try{
+        const templateParams = {
+            name: formData.name,
+            subject: formData.subject,
+            from_email: formData.email,
+            message: formData.message
+        };
+
+        await emailjs.send(serviceID,templateID,templateParams,publicKey);
+        setHasMessageSent(true);
+        setTimeout(() => {
+            setHasMessageSent(false);
+          }, 3000)
+        setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch(err){
+        setError('Failed to send message. Please try again. ' + err);
+        setTimeout(() => {
+            setError(null);
+          }, 3000)
+    } finally{
+        setIsSending(false);
+    }
   };
 
   return (
     <div className="mx-4 overflow-x-hidden" id="Contact">
+        {isSending && 
+        <div className='fixed top-0 w-screen h-screen bg-black bg-opacity-70 z-50 flex items-center justify-center'>
+            <img src={paths.loader} alt='Loading...' className='w-[30vw] h-auto' />
+        </div>}
       <h1 className="text-white text-center md:text-6xl tracking-wider text-5xl md:mt-12 mt:6 font-black">
         CONTACT
       </h1>
@@ -114,7 +148,9 @@ export default function Contact() {
                 required
               />
             </div>
-            <button type='submit'>
+            {error && <p className="text-red-500 text-sm">{error}</p>}
+            {hasMessageSent && <p className="text-green-600 text-sm">Message Sent!</p>}
+            <button type='submit' disabled={isSending}>
                 <FontAwesomeIcon icon={faPaperPlane} className='w-6 h-6 bg-secondary rounded-full p-3 text-center text-white hover:bg-offSecondary transition-all duration-300 cursor-pointer'/>
             </button>
           </form>
