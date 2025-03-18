@@ -27,10 +27,9 @@ export default function Contact() {
     setIsSending(true);
     setError(null);
 
-    const serviceID = process.env.EMAILJS_SERVICE_ID || '';
-    const templateID = process.env.EMAILJS_TEMPLATE_ID || '';
-    const publicKey = process.env.EMAILJS_PUBLIC_KEY || '';
-
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '';
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '';
     try{
         const templateParams = {
             name: formData.name,
