@@ -96,7 +96,7 @@ export default function CodeProjects() {
                 <h1 className="text-4xl group-hover:text-3xl lg:text-3xl lg:group-hover:text-2xl font-bold text-white group-hover:text-secondary font-poppins transition-all duration-300 bg-white bg-opacity-5 group-hover:bg-transparent lg:px-2 lg:py-3 text-center">
                     {project.title}
                 </h1>
-                <div className="group-hover:opacity-100 opacity-0 flex-col transition-all duration-300 px-5 text-xl lg:text-base">
+                <div className="group-hover:opacity-100 opacity-0 flex-col transition-all duration-300 px-5 text-xl lg:text-base lg:px-2">
                     <p className="text-white">{project.subtitle}</p>
                 </div>
             </div>

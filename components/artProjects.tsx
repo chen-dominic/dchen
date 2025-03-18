@@ -56,22 +56,22 @@ export default function ArtProjects() {
                     }`}
                 >
                     <div className="relative w-fit rounded-xl flex">
-                        <button className="fixed top-8 right-20 lg:top-0 lg:right-10 z-50" onClick={handleClose}>
+                        <button className="fixed top-4 right-4 md:top-8 md:right-8 lg:top-28 lg:right-40 z-50" onClick={handleClose}>
                             <FontAwesomeIcon
                                 icon={faCircleXmark}
-                                className="w-10 h-10 md:w-12 md:h-12 lg:w-8 lg:h-8 text-white hover:text-red-300 transition-all duration-300"
+                                className="w-8 h-8 md:w-12 md:h-12 lg:w-8 lg:h-8 text-white hover:text-red-300 transition-all duration-300"
                             />
                         </button>
                         <a href={selectedImage.imageUrl} target="_blank">
                             <img
                                 src={selectedImage.imageUrl}
                                 alt={selectedImage.title}
-                                className="w-auto h-[70vh] lg:h-[90vh] object-contain rounded-lg"
+                                className="w-[80vw] h-auto lg:w-[40vw] object-contain rounded-lg"
                             />
                         </a>
                         <div className="overflow-hidden absolute top-0 left-0">
                             <div className="text-white mt-4 max-w-96 p-4 bg-[#121212] h-fit w-fit opacity-80 hover:opacity-100 transition-all duration-300 rounded-r-xl -translate-x-[95%] hover:translate-x-0 cursor-pointer">
-                                <h3 className="text-xl font-bold">{selectedImage.title}</h3>
+                                <h3 className="text-lg font-semibold lg:text-xl lg:font-bold">{selectedImage.title}</h3>
                                 <p className="text-wrap text-sm">{selectedImage.subtitle}</p>
                             </div>
                         </div>
