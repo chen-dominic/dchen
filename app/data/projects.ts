@@ -1,11 +1,10 @@
 import techstack from "./tech";
 import paths from "./paths";
-import { faDev, faGit } from "@fortawesome/free-brands-svg-icons";
+import { faDev } from "@fortawesome/free-brands-svg-icons";
 import { faYoutube, faChrome, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const languages = techstack.languages;
 const frameworksLbraries = techstack.frameworksLbraries;
-const tools = techstack.tools;
 const other = techstack.other;
 
 const projects = {

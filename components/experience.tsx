@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGraduationCap, faLaptopCode } from "@fortawesome/free-solid-svg-icons"
 import experiences from "../app/data/experiences"
-import paths from "../app/data/paths"
 
 export default function Experience(){
     return (

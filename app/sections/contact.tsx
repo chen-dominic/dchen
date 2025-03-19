@@ -1,16 +1,16 @@
 "use client"
-import { faEnvelope, faLocationDot, faPaperPlane, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState, FormEvent } from 'react';
-import emailjs from '@emailjs/browser';
-import paths from '../data/paths';
+import { faEnvelope, faLocationDot, faPaperPlane, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState, FormEvent } from "react";
+import emailjs from "@emailjs/browser";
+import paths from "../data/paths";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
   const [hasMessageSent, setHasMessageSent] = useState(false);
@@ -27,9 +27,9 @@ export default function Contact() {
     setIsSending(true);
     setError(null);
 
-    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
-    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '';
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '';
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "";
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
     try{
         const templateParams = {
             name: formData.name,
@@ -43,9 +43,9 @@ export default function Contact() {
         setTimeout(() => {
             setHasMessageSent(false);
           }, 3000)
-        setFormData({ name: '', email: '', subject: '', message: '' });
+        setFormData({ name: "", email: "", subject: "", message: "" });
     } catch(err){
-        setError('Failed to send message. Please try again. ' + err);
+        setError("Failed to send message. Please try again. " + err);
         setTimeout(() => {
             setError(null);
           }, 3000)
@@ -57,15 +57,15 @@ export default function Contact() {
   return (
     <div className="mx-4 overflow-x-hidden" id="Contact">
         {isSending && 
-        <div className='fixed top-0 w-screen h-screen bg-black bg-opacity-70 z-50 flex items-center justify-center'>
-            <img src={paths.loader} alt='Loading...' className='w-[30vw] h-auto' />
+        <div className="fixed top-0 w-screen h-screen bg-black bg-opacity-70 z-50 flex items-center justify-center">
+            <img src={paths.loader} alt="Loading..." className="w-[30vw] h-auto" />
         </div>}
       <h1 className="text-white text-center md:text-6xl tracking-wider text-5xl md:mt-12 mt:6 font-black">
         CONTACT
       </h1>
-      <div className="bg-offPrimary rounded-xl p-4 mx-6 md:mx-40 my-12 flex flex-col md:flex-row">
-        <div className="flex-1 gap-4 md:border-r border-white flex justify-center flex-col px-6">
-          <h1 className="text-white font-semibold text-xl">Let's get in touch!</h1>
+      <div className="bg-offPrimary rounded-xl p-4 mx-6 md:mx-20 lg:mx-32 2xl:mx-60 my-12 flex flex-col lg:flex-row">
+        <div className="flex-1 gap-4 md:border-r border-primary flex justify-center flex-col px-6">
+          <h1 className="text-white font-semibold text-xl">Let&apos;s get in touch!</h1>
           <p className="text-white font-normal text-base">Feel free to send a message!</p>
           <div className="flex justify-between text-white text-sm">
             <p>
@@ -150,8 +150,8 @@ export default function Contact() {
             </div>
             {error && <p className="text-red-500 text-sm">{error}</p>}
             {hasMessageSent && <p className="text-green-600 text-sm">Message Sent!</p>}
-            <button type='submit' disabled={isSending}>
-                <FontAwesomeIcon icon={faPaperPlane} className='w-6 h-6 bg-secondary rounded-full p-3 text-center text-white hover:bg-offSecondary transition-all duration-300 cursor-pointer'/>
+            <button type="submit" disabled={isSending}>
+                <FontAwesomeIcon icon={faPaperPlane} className="w-12 h-6 bg-secondary rounded-full p-3 text-center text-white hover:bg-offSecondary transition-all duration-300 cursor-pointer"/>
             </button>
           </form>
         </div>

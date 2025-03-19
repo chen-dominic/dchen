@@ -1,4 +1,3 @@
-import { url } from "inspector";
 import paths from "./paths";
 
 const experiences = {

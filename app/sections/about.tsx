@@ -34,7 +34,7 @@ export default function About() {
 
     return (
       <div className="mx-4 pt-20 overflow-x-hidden" id="About">
-        <h1 className="text-white text-center md:text-6xl tracking-wider text-5xl md:mt-12 mt:6 font-black">WHO'S THIS?</h1>
+        <h1 className="text-white text-center md:text-6xl tracking-wider text-5xl md:mt-12 mt:6 font-black">WHO&apos;S THIS?</h1>
         <div className="flex md:flex-row flex-col items-center md:py-20 md:px-40 px-8">
           <div className="flex-1 flex flex-col w-fit md:justify-between justify-center md:m-0 my-4">
             <div className="flex flex-col w-fit">
@@ -55,7 +55,7 @@ export default function About() {
             <p className=" md:text-xl text-lg md:mt-4 mt-2">{aboutText}</p> <br />
             <p className=" md:text-xl text-lg md:mt-4 mt-2">
               I am currently a .NET Software Developer at 
-              <a href='https://www.fgfbrands.com/' className='text-secondary font-bold hover:text-offSecondary' target="_blank"> FGF Brands </a> 
+              <a href="https://www.fgfbrands.com/" className="text-secondary font-bold hover:text-offSecondary" target="_blank"> FGF Brands </a> 
               with experience in building web APIs, working with SQL databases, and developing full stack applications! 🚀
             </p>
             <div className=" md:flex hidden">
