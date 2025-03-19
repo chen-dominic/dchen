@@ -13,9 +13,9 @@ export default function About() {
   const [currentImageIndex,setCurrentImageIndex] = useState(0);
   
   const images = [
-    paths.me,
-    paths.meFr,
-    paths.logo
+    paths.me2,
+    paths.tofu,
+    paths.tofu2
   ]
   
   const handleNext = () => {

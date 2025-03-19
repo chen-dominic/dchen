@@ -63,7 +63,7 @@ export default function Contact() {
       <h1 className="text-white text-center md:text-6xl tracking-wider text-5xl md:mt-12 mt:6 font-black">
         CONTACT
       </h1>
-      <div className="bg-offPrimary rounded-xl p-4 mx-6 md:mx-20 lg:mx-32 2xl:mx-60 my-12 flex flex-col lg:flex-row">
+      <div className="bg-offPrimary rounded-xl py-4 lg:p-4 mx-2 md:mx-20 lg:mx-32 2xl:mx-60 my-12 flex flex-col lg:flex-row">
         <div className="flex-1 gap-4 md:border-r border-primary flex justify-center flex-col px-6">
           <h1 className="text-white font-semibold text-xl">Let&apos;s get in touch!</h1>
           <p className="text-white font-normal text-base">Feel free to send a message!</p>
@@ -87,7 +87,7 @@ export default function Contact() {
           </div>
         </div>
         <div className="flex-[2] p-6">
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4 md:text-base text-sm">
             <div className="flex flex-col">
               <label htmlFor="name" className="text-white font-semibold text-sm mb-1">
                 Name
