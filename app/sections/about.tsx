@@ -13,7 +13,9 @@ export default function About() {
   const [currentImageIndex,setCurrentImageIndex] = useState(0);
   
   const images = [
-    paths.me2,
+    paths.me1,
+    paths.meFr,
+    paths.tofu3,
     paths.tofu,
     paths.tofu2
   ]
@@ -34,7 +36,7 @@ export default function About() {
 
     return (
       <div className="mx-4 pt-20 overflow-x-hidden" id="About">
-        <h1 className="text-white text-center md:text-6xl tracking-wider text-5xl md:mt-12 mt:6 font-black">WHO&apos;S THIS?</h1>
+        <h1 className="text-white text-center md:text-6xl tracking-wider text-5xl md:mt-12 mt:6 font-black">WHO AM I?</h1>
         <div className="flex md:flex-row flex-col items-center md:py-20 md:px-40 px-8">
           <div className="flex-1 flex flex-col w-fit md:justify-between justify-center md:m-0 my-4">
             <div className="flex flex-col w-fit">

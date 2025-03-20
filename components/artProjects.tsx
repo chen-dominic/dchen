@@ -33,7 +33,7 @@ export default function ArtProjects() {
     }, [isVisible, selectedImage]);
 
     return (
-        <div className="mx-0 w-screen px-12 lg:px-40 h-fit items-center justify-center my-12 font-poppins">
+        <div className="mx-0 w-screen px-2 md:px-12 lg:px-40 h-fit items-center justify-center my-12 font-poppins">
             <div className="grid grid-cols-2 gap-2 lg:grid-cols-3 lg:gap-2 lg:gap-y-6">
                 {artProjects.map((project, index) => (
                     <div
@@ -70,9 +70,9 @@ export default function ArtProjects() {
                             />
                         </a>
                         <div className="overflow-hidden absolute top-0 left-0">
-                            <div className="text-white mt-4 max-w-96 p-4 bg-[#121212] h-fit w-fit opacity-80 hover:opacity-100 transition-all duration-300 rounded-r-xl -translate-x-[95%] hover:translate-x-0 cursor-pointer">
-                                <h3 className="text-lg font-semibold lg:text-xl lg:font-bold">{selectedImage.title}</h3>
-                                <p className="text-wrap text-sm">{selectedImage.subtitle}</p>
+                            <div className="text-white mt-4 max-w-80 md:max-w-96 p-2 md:p-4 bg-[#121212] h-fit w-fit opacity-80 hover:opacity-100 transition-all duration-300 rounded-r-xl -translate-x-[95%] hover:translate-x-0 cursor-pointer">
+                                <h3 className="text-base md:text-lg font-semibold lg:text-xl lg:font-bold">{selectedImage.title}</h3>
+                                <p className="text-wrap text-xs md:text-sm">{selectedImage.subtitle}</p>
                             </div>
                         </div>
                     </div>
