@@ -33,7 +33,7 @@ export default function ArtProjects() {
     }, [isVisible, selectedImage]);
 
     return (
-        <div className="mx-0 w-screen px-12 lg:px-40 h-fit items-center justify-center my-12 font-poppins">
+        <div className="mx-0 w-screen px-2 md:px-12 lg:px-40 h-fit items-center justify-center my-12 font-poppins">
             <div className="grid grid-cols-2 gap-2 lg:grid-cols-3 lg:gap-2 lg:gap-y-6">
                 {artProjects.map((project, index) => (
                     <div

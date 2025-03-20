@@ -8,9 +8,10 @@ const paths = {
     chainvision: '/ChainVision.png',
     ecodex: 'https://github.com/josephleungg/EcoDex/raw/main/client/public/images/ecodex-trans-readme.png?raw=true',
     loader: '/loader.gif',
-    me2: '/me2.jpeg',
+    me1: '/me1.jpeg',
     tofu: '/tofu1.jpeg',
     tofu2: '/tofu2.jpeg',
+    tofu3: '/tofu3.jpeg',
 }
 
 export default paths;

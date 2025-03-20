@@ -55,12 +55,12 @@ export default function Contact() {
   };
 
   return (
-    <div className="mx-4 overflow-x-hidden" id="Contact">
+    <div className="mx-4 overflow-x-hidden pt-20 " id="Contact">
         {isSending && 
         <div className="fixed top-0 w-screen h-screen bg-black bg-opacity-70 z-50 flex items-center justify-center">
             <img src={paths.loader} alt="Loading..." className="w-[30vw] h-auto" />
         </div>}
-      <h1 className="text-white text-center md:text-6xl tracking-wider text-5xl md:mt-12 mt:6 font-black">
+      <h1 className="text-white text-center md:text-6xl tracking-wider text-5xl font-black">
         CONTACT
       </h1>
       <div className="bg-offPrimary rounded-xl py-4 lg:p-4 mx-2 md:mx-20 lg:mx-32 2xl:mx-60 my-12 flex flex-col lg:flex-row">
