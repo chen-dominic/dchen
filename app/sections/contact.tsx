@@ -79,12 +79,6 @@ export default function Contact() {
             </p>
             <p>dominic.chen630@gmail.com</p>
           </div>
-          <div className="flex justify-between text-white text-sm">
-            <p>
-              <FontAwesomeIcon icon={faPhone} className="h-3 w-3 mr-2" /> Phone:
-            </p>
-            <p>(647)-534-5985</p>
-          </div>
         </div>
         <div className="flex-[2] p-6">
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 md:text-base text-sm">
