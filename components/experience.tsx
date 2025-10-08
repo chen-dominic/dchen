@@ -16,7 +16,7 @@ export default function Experience(){
                     <div className="flex flex-col ml-4">
                         <h1 className="text-white font-bold text-xl pb-2 uppercase group-hover:text-secondary transition-all md:block hidden">Work</h1>
                         {experiences.professional.map((item, index) => (
-                            <div className="text-lightText md:py-2 py-0 group/child" key={index}>
+                            <div className="text-lightText md:py-2 py-0 group/child mb-4" key={index}>
                                 <div className="flex justify-between items-center mb-2">
                                     {item.url ? (
                                         <a href={item.url} target="_blank"><img src={item.src} alt={item.src} className="w-auto h-12" /></a>
