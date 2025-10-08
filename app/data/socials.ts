@@ -1,4 +1,4 @@
-import { faLinkedin, faGithub, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 const socials = [
   {
