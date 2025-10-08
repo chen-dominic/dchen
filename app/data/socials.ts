@@ -12,11 +12,6 @@ const socials = [
     icon: faGithub,
   },
   {
-    name: 'Instagram',
-    url: 'https://instagram.com/dominicchen_',
-    icon: faInstagram,
-  },
-  {
     name: 'Youtube',
     url: 'https://www.youtube.com/@dominic-cs',
     icon: faYoutube,

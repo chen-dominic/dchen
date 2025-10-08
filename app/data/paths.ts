@@ -12,6 +12,7 @@ const paths = {
     tofu: '/tofu1.jpeg',
     tofu2: '/tofu2.jpeg',
     tofu3: '/tofu3.jpeg',
+    dayforce: 'https://www.dayforce.com/Ceridian/media/TestMediaLibrary/dayforce-lift.jpg',
 }
 
 export default paths;
