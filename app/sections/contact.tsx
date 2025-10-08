@@ -22,37 +22,37 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSending(true);
-    setError(null);
+  // const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   setIsSending(true);
+  //   setError(null);
 
-    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
-    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "";
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
-    try{
-        const templateParams = {
-            name: formData.name,
-            subject: formData.subject,
-            from_email: formData.email,
-            message: formData.message
-        };
+  //   const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
+  //   const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "";
+  //   const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
+  //   try{
+  //       const templateParams = {
+  //           name: formData.name,
+  //           subject: formData.subject,
+  //           from_email: formData.email,
+  //           message: formData.message
+  //       };
 
-        await emailjs.send(serviceID,templateID,templateParams,publicKey);
-        setHasMessageSent(true);
-        setTimeout(() => {
-            setHasMessageSent(false);
-          }, 3000)
-        setFormData({ name: "", email: "", subject: "", message: "" });
-    } catch(err){
-        setError("Failed to send message. Please try again. " + err);
-        setTimeout(() => {
-            setError(null);
-          }, 3000)
-    } finally{
-        setIsSending(false);
-    }
-  };
+  //       await emailjs.send(serviceID,templateID,templateParams,publicKey);
+  //       setHasMessageSent(true);
+  //       setTimeout(() => {
+  //           setHasMessageSent(false);
+  //         }, 3000)
+  //       setFormData({ name: "", email: "", subject: "", message: "" });
+  //   } catch(err){
+  //       setError("Failed to send message. Please try again. " + err);
+  //       setTimeout(() => {
+  //           setError(null);
+  //         }, 3000)
+  //   } finally{
+  //       setIsSending(false);
+  //   }
+  // };
 
   return (
     <div className="mx-4 overflow-x-hidden pt-20 " id="Contact">
