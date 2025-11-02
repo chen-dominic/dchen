@@ -32,7 +32,7 @@ export default function About() {
     );
   };
 
-    const aboutText = "I am a third-year Computer Science student at Toronto Metropolitan University, pursuing my passion in the field. My interests lie in coding 💻, lifting weights 💪🏼, and gaming 🕹️.";
+    const aboutText = "I am a Computer Science student at Toronto Metropolitan University, pursuing my passion in the field. My interests lie in coding 💻, lifting weights 💪🏼, and gaming 🕹️.";
 
     return (
       <div className="mx-4 pt-20 overflow-x-hidden" id="About">
@@ -56,8 +56,8 @@ export default function About() {
           <div className="flex-1 flex flex-col justify-center text-lightText">
             <p className=" md:text-xl text-lg md:mt-4 mt-2">{aboutText}</p> <br />
             <p className=" md:text-xl text-lg md:mt-4 mt-2">
-              I am currently a .NET Software Developer at 
-              <a href="https://www.fgfbrands.com/" className="text-secondary font-bold hover:text-offSecondary" target="_blank"> FGF Brands </a> 
+              I am currently a Software Developer at 
+              <a href="http://dayforce.com/" className="text-secondary font-bold hover:text-offSecondary" target="_blank"> Dayforce </a> 
               with experience in building web APIs, working with SQL databases, and developing full stack applications! 🚀
             </p>
             <div className=" md:flex hidden">

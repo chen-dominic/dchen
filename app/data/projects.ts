@@ -190,16 +190,6 @@ const projects = {
             imageUrl: "https://i.imgur.com/rzWMhFa.png",
         },
         {
-            title: "Winter Smile",
-            subtitle: "An enchanting illustration of a couple sharing a tender moment in the heart of winter.",
-            imageUrl: "https://i.imgur.com/pEnwcDP.png",
-        },
-        {
-            title: "The Start",
-            subtitle: "A visual representation of the beginning of an extraordinary story.",
-            imageUrl: "https://i.imgur.com/5dBXo10.png",
-        },
-        {
             title: "Great Escape",
             subtitle: "Dr. Chen conjures a portal to a world of wonder and liberation.",
             imageUrl: "https://i.imgur.com/HUnUsBO.png",
