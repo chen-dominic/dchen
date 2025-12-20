@@ -13,9 +13,8 @@ export default function About() {
   const [currentImageIndex,setCurrentImageIndex] = useState(0);
   
   const images = [
-    paths.me1,
     paths.meFr,
-    paths.tofu3,
+    paths.me1,
     paths.tofu,
     paths.tofu2
   ]
@@ -40,8 +39,15 @@ export default function About() {
         <div className="flex md:flex-row flex-col items-center md:py-20 md:px-40 px-8">
           <div className="flex-1 flex flex-col w-fit md:justify-between justify-center md:m-0 my-4">
             <div className="flex flex-col w-fit">
-              <div className="md:h-[300px] md:w-[300px] h-[200px] w-[200px] md:p-2 bg-offPrimary rounded-full overflow-hidden">
-                <Image src={images[currentImageIndex]} width={500} height={500} layout="responsive" className="rounded-full" alt="Dominic Chen" />
+              <div className="md:h-[300px] md:w-[300px] h-[200px] w-[200px] md:p-2 bg-offPrimary rounded-full overflow-hidden relative">
+                <Image 
+                  src={images[currentImageIndex]} 
+                  width={500} 
+                  height={500} 
+                  className="rounded-full object-cover object-center" 
+                  alt="Dominic Chen"
+                  style={{ width: '100%', height: '100%' }}
+                />
               </div>
               <div className="flex items-center justify-around opacity-50 hover:opacity-100">
                 <div className="bg-secondary rounded-full flex items-center justify-center p-2 cursor-pointer hover:bg-offSecondary transition-all duration-200" onClick={handlePrev}>
