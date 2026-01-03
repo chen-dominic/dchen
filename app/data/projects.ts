@@ -68,7 +68,7 @@ const projects = {
         },
         {
             title: "TMUCSA",
-            subtitle: "The official website of TMUCSA, a social club that promotes student wellbeing through various activities at TMU.",
+            subtitle: "The official website of TMUCSA, a social club that promotes student wellbeing through various activities at TMU. (work in progress)",
             techUsed:   [languages.javascript,frameworksLbraries.nextjs,frameworksLbraries.tailwind,other.firebase],
             github: "https://github.com/TMUCSA/tmucsa-website",
             links: [
@@ -78,7 +78,7 @@ const projects = {
                 },
                 {
                     icon: faChrome,
-                    url: "https://tmucsa.netlify.app/",
+                    url: "https://tmucsa.vercel.app/",
                 }
             ],
             thumbnail: "https://ugc.production.linktr.ee/yjpSKwHnRiS6IjbAAtQE_PWLar811KGIJVxM2?io=true&size=avatar-v3_0",
@@ -102,7 +102,7 @@ const projects = {
                     url: "https://www.youtube.com/watch?v=AgtgF8Z4h54",
                 }
             ],
-            thumbnail: "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/739/116/datas/gallery.jpg",
+            thumbnail: "https://img.youtube.com/vi/AgtgF8Z4h54/0.jpg",
         },
         {
             title: "Smoggle Maps",

@@ -4,7 +4,7 @@ import ResumeButton from "../../components/resume-button";
 import SocialLinks from "../../components/social-links";
 
 
-const description = ["I am a third-year student at Toronto Metropolitan University 👨‍🎓.",
+const description = ["I am a Computer Science student at Toronto Metropolitan University 👨‍🎓.",
                     "I enjoy full stack web development and learning new skills!",
                     "Welcome to my website!"];
 
