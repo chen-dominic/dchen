@@ -4,7 +4,7 @@ import Image from "next/image";
 import paths from "../data/paths";
 import ResumeButton from "../../components/resume-button";
 import Experience from "../../components/experience";
-import { useState } from "react";
+// import { useState } from "react";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
 
