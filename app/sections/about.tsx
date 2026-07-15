@@ -5,31 +5,31 @@ import paths from "../data/paths";
 import ResumeButton from "../../components/resume-button";
 import Experience from "../../components/experience";
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function About() {
 
-  const [currentImageIndex,setCurrentImageIndex] = useState(0);
+  // const [currentImageIndex,setCurrentImageIndex] = useState(0);
   
-  const images = [
-    paths.meFr,
-    paths.me1,
-    paths.tofu,
-    paths.tofu2
-  ]
+  // const images = [
+  //   paths.meFr,
+  //   paths.me1,
+  //   paths.tofu,
+  //   paths.tofu2
+  // ]
   
-  const handleNext = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
-  };
+  // const handleNext = () => {
+  //   setCurrentImageIndex((prevIndex) =>
+  //     prevIndex === images.length - 1 ? 0 : prevIndex + 1
+  //   );
+  // };
 
-  const handlePrev = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
+  // const handlePrev = () => {
+  //   setCurrentImageIndex((prevIndex) =>
+  //     prevIndex === 0 ? images.length - 1 : prevIndex - 1
+  //   );
+  // };
 
     const aboutText = "I am a Computer Science student at Toronto Metropolitan University, pursuing my passion in the field. My interests lie in coding 💻, lifting weights 💪🏼, and building cool things 🚀.";
 
