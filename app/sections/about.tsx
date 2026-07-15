@@ -62,8 +62,8 @@ export default function About() {
           <div className="flex-1 flex flex-col justify-center text-lightText">
             <p className=" md:text-xl text-lg md:mt-4 mt-2">{aboutText}</p> <br />
             <p className=" md:text-xl text-lg md:mt-4 mt-2">
-              I am currently a Juinor Software Engineer at 
-              <a href="https://www.assistiq.ai/" className="text-secondary font-bold hover:text-offSecondary" target="_blank"> AssistIQ </a> 
+              I am currently a Junior Software Engineer at 
+              <a href="https://www.assistiq.ai/" className="text-secondary font-bold hover:text-offSecondary" target="_blank" rel="noopener noreferrer"> AssistIQ </a> 
               with experience in building web APIs, working with SQL databases, and developing full stack applications! 🚀
             </p>
             <div className=" md:flex hidden">

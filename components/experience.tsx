@@ -19,9 +19,9 @@ export default function Experience(){
                             <div className="text-lightText md:py-2 py-0 group/child mb-8" key={index}>
                                 <div className="flex justify-between items-center mb-2">
                                     {item.url ? (
-                                        <a href={item.url} target="_blank"><img src={item.src} alt={item.src} className="w-auto max-w-40 h-12" /></a>
+                                        <a href={item.url} target="_blank" rel="noopener noreferrer"><img src={item.src} alt={`${item.location} LOGO`} className="w-auto max-w-40 h-12" /></a>
                                     ) : (
-                                        <img src={item.src} alt={item.src} className="w-auto h-12" />
+                                        <img src={item.src} alt={`${item.location} LOGO`} className="w-auto h-12" />
                                     )}
                                     <div className="bg-gray-600 w-fit px-4 py-1 float-end rounded-full text-center hover:text-secondary transition-all">
                                         <h1 className="text-sm font-bold uppercase">{item.date}</h1>
@@ -52,9 +52,11 @@ export default function Experience(){
                             <div className="text-lightText md:py-2 py-0 group/child" key={index}>
                                 <div className="flex justify-between items-center mb-2">
                                     {item.url ? (
-                                        <a href={item.url} target="_blank"><img src={item.src} alt={item.src} className="w-auto h-12" /></a>
+                                        <a href={item.url} target="_blank" rel="noopener noreferrer">
+                                            <img src={item.src} alt={`${item.title} LOGO`} className="w-auto h-12" />
+                                        </a>
                                     ) : (
-                                        <img src={item.src} alt={item.src} className="w-auto h-12" />
+                                        <img src={item.src} alt={`${item.title} LOGO`} className="w-auto h-12" />
                                     )}
                                     <div className="bg-gray-600 w-fit px-4 py-1 float-end rounded-full text-center hover:text-secondary transition-all">
                                         <h1 className="text-sm font-bold uppercase">{item.date}</h1>
