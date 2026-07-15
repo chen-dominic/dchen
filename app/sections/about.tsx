@@ -31,7 +31,7 @@ export default function About() {
     );
   };
 
-    const aboutText = "I am a Computer Science student at Toronto Metropolitan University, pursuing my passion in the field. My interests lie in coding 💻, lifting weights 💪🏼, and gaming 🕹️.";
+    const aboutText = "I am a Computer Science student at Toronto Metropolitan University, pursuing my passion in the field. My interests lie in coding 💻, lifting weights 💪🏼, and building cool things 🚀.";
 
     return (
       <div className="mx-4 pt-20 overflow-x-hidden" id="About">
@@ -39,31 +39,31 @@ export default function About() {
         <div className="flex md:flex-row flex-col items-center md:py-20 md:px-40 px-8">
           <div className="flex-1 flex flex-col w-fit md:justify-between justify-center md:m-0 my-4">
             <div className="flex flex-col w-fit">
-              <div className="md:h-[300px] md:w-[300px] h-[200px] w-[200px] md:p-2 bg-offPrimary rounded-full overflow-hidden relative">
+              <div className="md:h-[500px] md:w-[400px] h-[200px] w-[200px] md:p-2 bg-offPrimary rounded-xl overflow-hidden relative">
                 <Image 
-                  src={images[currentImageIndex]} 
-                  width={500} 
+                  src={paths.meFr} 
+                  width={600} 
                   height={500} 
-                  className="rounded-full object-cover object-center" 
+                  className="rounded-xl object-cover object-center" 
                   alt="Dominic Chen"
                   style={{ width: '100%', height: '100%' }}
                 />
               </div>
-              <div className="flex items-center justify-around opacity-50 hover:opacity-100">
+              {/* <div className="flex items-center justify-around opacity-50 hover:opacity-100">
                 <div className="bg-secondary rounded-full flex items-center justify-center p-2 cursor-pointer hover:bg-offSecondary transition-all duration-200" onClick={handlePrev}>
                   <FontAwesomeIcon icon={faCaretLeft} className="w-5 h-5 text-white" />
                 </div>
                 <div className="bg-secondary rounded-full flex items-center justify-center p-2 cursor-pointer hover:bg-offSecondary transition-all duration-200" onClick={handleNext}>
                   <FontAwesomeIcon icon={faCaretRight} className="w-5 h-5 text-white" />
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="flex-1 flex flex-col justify-center text-lightText">
             <p className=" md:text-xl text-lg md:mt-4 mt-2">{aboutText}</p> <br />
             <p className=" md:text-xl text-lg md:mt-4 mt-2">
-              I am currently a Software Developer at 
-              <a href="http://dayforce.com/" className="text-secondary font-bold hover:text-offSecondary" target="_blank"> Dayforce </a> 
+              I am currently a Juinor Software Engineer at 
+              <a href="https://www.assistiq.ai/" className="text-secondary font-bold hover:text-offSecondary" target="_blank"> AssistIQ </a> 
               with experience in building web APIs, working with SQL databases, and developing full stack applications! 🚀
             </p>
             <div className=" md:flex hidden">

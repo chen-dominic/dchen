@@ -17,13 +17,25 @@ const experiences = {
     ],
     professional: [
         {
+            title: "Junior Software Engineer",
+            location: "AssistIQ",
+            date: "May 2026 - Present",
+            description: [
+                "Built touch-friendly React and TypeScript workflows for hospital receiving.",
+                "Implemented product exceptions, quantity tracking, and UOM conversion features.",
+                "Fixed UI issues, refactored code, and integrated English/French support.",
+            ],
+            src: paths.assistiq,
+            url: "https://www.assistiq.ai/",
+        },
+        {
             title: "Software Developer Intern",
             location: "Dayforce",
-            date: "Sept 2025 - Present",
+            date: "Sept 2025 - April 2026",
             description: [
                 "Developed and debugged features across a .NET and Angular JS application.",
                 "Collaborated with the team on daily sprints to track tasks efficiently.",
-                "Analyzed and debugged code to identify issues and implement solutions.",
+                "Built a GitHub PR AI agent to automate PR creation and streamline the development process.",
             ],
             src: paths.dayforce,
             url: "https://www.dayforce.com/",
