@@ -1,38 +1,76 @@
-import techstack from "../app/data/tech";
+import techstacks from "../app/data/tech"
 
-const categories = [
-  { title: "Languages", items: Object.values(techstack.languages) },
-  { title: "Frameworks & libraries", items: Object.values(techstack.frameworksLbraries) },
-  { title: "Developer tools", items: Object.values(techstack.tools) },
-];
+interface Tech {
+    name: string;
+    url: string;
+    iconClass: string;
+}
 
-export default function Techstack() {
-  return (
-    <div className="mt-10 grid gap-5 lg:grid-cols-3">
-      {categories.map((category) => (
-        <article key={category.title} className="rounded-3xl border border-line bg-surface p-5 shadow-card sm:p-6">
-          <div className="flex items-center gap-3 border-b border-line pb-5">
-            <span className="h-2.5 w-2.5 rounded-full bg-secondary" aria-hidden="true" />
-            <h3 className="text-lg font-bold text-white">{category.title}</h3>
-          </div>
-          <ul className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
-            {category.items.map((tech) => (
-              <li key={tech.name}>
-                <a
-                  href={tech.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex min-h-20 flex-col items-center justify-center gap-2 rounded-2xl border border-line bg-offPrimary px-2 py-3 text-center transition-all duration-200 hover:-translate-y-0.5 hover:border-secondary/60 hover:bg-elevated"
-                  aria-label={`Learn more about ${tech.name}`}
-                >
-                  <i className={`${tech.iconClass} text-2xl text-secondary`} aria-hidden="true" />
-                  <span className="text-[11px] font-semibold leading-4 text-lightText group-hover:text-white">{tech.name}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </article>
-      ))}
-    </div>
-  );
+interface TechStack {
+    languages: { [key: string]: Tech };
+    frameworksLbraries: { [key: string]: Tech };
+    tools: { [key: string]: Tech };
+}
+
+const techstack: TechStack = techstacks;
+
+export default function Techstack(){
+    return(
+        <div className="flex text-white
+                        lg:flex-row flex-col 
+                        lg:gap-12 lg:mx-32 lg:mt-12
+                        2xl:mx-60
+                        gap-4 mx-4 mt-4">
+            <div className="flex-1 p-4 bg-offPrimary rounded-xl">
+                <h1 className="text-xl font-semibold">Languages</h1>
+                <div className="lg:grid lg:grid-cols-3 flex lg:overflow-visible overflow-scroll justify-center items-center lg:gap-2 gap-3 pt-4">
+                    {Object.keys(techstack.languages).map((key, index) => {
+                        const tech = techstack.languages[key];
+                        return (
+                            <div className="flex flex-col items-center group overflow-visible" key={index}>
+                                <a className="text-white rounded-md hover:-translate-y-1 transition-all p-3 z-10 bg-primary drop-shadow-lg" href={tech.url} target="_blank" rel="noopener noreferrer" title={tech.name}>
+                                    <i className={`${tech.iconClass} 2xl:text-6xl lg:text-5xl text-4xl`}></i>
+                                </a>
+                                <p className="text-center -translate-y-1 text-nowrap text-sm lg:flex hidden text-offPrimary lg:group-hover:text-white lg:group-hover:translate-y-0 transition-all">{tech.name}</p>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+
+            <div className="flex-1 p-4 bg-offPrimary rounded-xl">
+                <h1 className="text-xl font-semibold overflow-hidden text-nowrap">Frameworks & Libraries</h1>
+                <div className="lg:grid lg:grid-cols-3 flex lg:overflow-visible overflow-scroll justify-center items-center lg:gap-2 gap-3 pt-4">
+                {Object.keys(techstack.frameworksLbraries).map((key, index) => {
+                        const tech = techstack.frameworksLbraries[key];
+                        return (
+                            <div className="flex flex-col items-center group overflow-visible" key={index}>
+                                <a className="text-white rounded-md hover:-translate-y-1 transition-all p-3 z-10 bg-primary drop-shadow-lg" href={tech.url} target="_blank" rel="noopener noreferrer" title={tech.name}>
+                                    <i className={`${tech.iconClass} 2xl:text-6xl lg:text-5xl text-4xl`}></i>
+                                </a>
+                                <p className="text-center -translate-y-1 text-nowrap text-sm lg:flex hidden text-offPrimary lg:group-hover:text-white lg:group-hover:translate-y-0 transition-all">{tech.name}</p>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+
+            <div className="flex-1 p-4 bg-offPrimary rounded-xl">
+                <h1 className="text-xl font-semibold text-nowrap">Developer Tools</h1>
+                <div className="lg:grid lg:grid-cols-3 flex lg:overflow-visible overflow-scroll justify-center items-center lg:gap-2 gap-3 pt-4">
+                {Object.keys(techstack.tools).map((key, index) => {
+                        const tech = techstack.tools[key];
+                        return (
+                            <div className="flex flex-col items-center group overflow-visible" key={index}>
+                                <a className="text-white rounded-md hover:-translate-y-1 transition-all p-3 z-10 bg-primary drop-shadow-lg" href={tech.url} target="_blank" rel="noopener noreferrer" title={tech.name}>
+                                    <i className={`${tech.iconClass} 2xl:text-6xl lg:text-5xl text-4xl`}></i>
+                                </a>
+                                <p className="text-center -translate-y-1 text-nowrap text-sm lg:flex hidden text-offPrimary lg:group-hover:text-white lg:group-hover:translate-y-0 transition-all">{tech.name}</p>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+        </div>
+    )
 }

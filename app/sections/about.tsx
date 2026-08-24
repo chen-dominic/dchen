@@ -1,75 +1,82 @@
+"use client"
+import Techstack from "../../components/techstack";
 import Image from "next/image";
 import paths from "../data/paths";
+import ResumeButton from "../../components/resume-button";
 import Experience from "../../components/experience";
-import SectionHeading from "../../components/section-heading";
-import Techstack from "../../components/techstack";
+// import { useState } from "react";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function About() {
-  return (
-    <section id="about" className="px-5 py-20 sm:px-8 lg:py-28">
-      <div className="mx-auto max-w-7xl">
-        <SectionHeading
-          eyebrow="About me"
-          title={<>Where technical systems meet real people.</>}
-          description="I care about the details that make software easier to understand, easier to use, and easier to trust."
-        />
 
-        <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-[0.82fr_1.18fr]">
-          <figure className="relative min-h-[420px] overflow-hidden rounded-3xl border border-line bg-offPrimary shadow-card sm:min-h-[560px] lg:min-h-0">
-            <Image
-              src={paths.meFr}
-              fill
-              sizes="(max-width: 1024px) 100vw, 42vw"
-              className="object-cover object-center"
-              alt="Dominic Chen in a grey hoodie"
-            />
-            <figcaption className="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/10 bg-primary/90 px-5 py-4 backdrop-blur-sm">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-secondary">Beyond the keyboard</p>
-              <p className="mt-1 text-sm font-medium text-lightText">Lifting, visual art, and always learning something new.</p>
-            </figcaption>
-          </figure>
+  // const [currentImageIndex,setCurrentImageIndex] = useState(0);
+  
+  // const images = [
+  //   paths.meFr,
+  //   paths.me1,
+  //   paths.tofu,
+  //   paths.tofu2
+  // ]
+  
+  // const handleNext = () => {
+  //   setCurrentImageIndex((prevIndex) =>
+  //     prevIndex === images.length - 1 ? 0 : prevIndex + 1
+  //   );
+  // };
 
-          <div className="flex flex-col justify-between rounded-3xl border border-line bg-surface p-6 shadow-card sm:p-8 lg:p-10">
-            <div>
-              <p className="text-lg leading-9 text-lightText sm:text-xl">
-                I&apos;m drawn to work where thoughtful engineering makes complicated work feel simple. Across healthcare, workforce software, and manufacturing, I&apos;ve built interfaces, APIs, data workflows, and developer tools that help people move with more clarity.
-              </p>
-              <p className="mt-6 text-base leading-8 text-muted sm:text-lg">
-                I enjoy working across the stack, asking the extra question, and turning rough ideas into dependable products. That same curiosity carries into the visual art you&apos;ll find in my work section.
-              </p>
+  // const handlePrev = () => {
+  //   setCurrentImageIndex((prevIndex) =>
+  //     prevIndex === 0 ? images.length - 1 : prevIndex - 1
+  //   );
+  // };
+
+    const aboutText = "I am a Computer Science student at Toronto Metropolitan University, pursuing my passion in the field. My interests lie in coding 💻, lifting weights 💪🏼, and building cool things 🚀.";
+
+    return (
+      <div className="mx-4 pt-20 overflow-x-hidden" id="About">
+        <h1 className="text-white text-center md:text-6xl tracking-wider text-5xl md:mt-12 mt:6 font-black">WHO AM I?</h1>
+        <div className="flex md:flex-row flex-col items-center md:py-20 md:px-40 px-8">
+          <div className="flex-1 flex flex-col w-fit md:justify-between justify-center md:m-0 my-4">
+            <div className="flex flex-col w-fit">
+              <div className="md:h-[500px] md:w-[400px] h-[200px] w-[200px] md:p-2 bg-offPrimary rounded-xl overflow-hidden relative">
+                <Image 
+                  src={paths.meFr} 
+                  width={600} 
+                  height={500} 
+                  className="rounded-xl object-cover object-center" 
+                  alt="Dominic Chen"
+                  style={{ width: '100%', height: '100%' }}
+                />
+              </div>
+              {/* <div className="flex items-center justify-around opacity-50 hover:opacity-100">
+                <div className="bg-secondary rounded-full flex items-center justify-center p-2 cursor-pointer hover:bg-offSecondary transition-all duration-200" onClick={handlePrev}>
+                  <FontAwesomeIcon icon={faCaretLeft} className="w-5 h-5 text-white" />
+                </div>
+                <div className="bg-secondary rounded-full flex items-center justify-center p-2 cursor-pointer hover:bg-offSecondary transition-all duration-200" onClick={handleNext}>
+                  <FontAwesomeIcon icon={faCaretRight} className="w-5 h-5 text-white" />
+                </div>
+              </div> */}
             </div>
-
-            <dl className="mt-10 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-2xl border border-line bg-offPrimary p-5">
-                <dt className="text-xs font-bold uppercase tracking-[0.16em] text-secondary">What I build</dt>
-                <dd className="mt-2 text-sm font-semibold leading-6 text-white">Responsive products, reliable APIs, and useful data workflows.</dd>
-              </div>
-              <div className="rounded-2xl border border-line bg-offPrimary p-5">
-                <dt className="text-xs font-bold uppercase tracking-[0.16em] text-secondary">How I work</dt>
-                <dd className="mt-2 text-sm font-semibold leading-6 text-white">Curiously, collaboratively, and with care for the final detail.</dd>
-              </div>
-            </dl>
+          </div>
+          <div className="flex-1 flex flex-col justify-center text-lightText">
+            <p className=" md:text-xl text-lg md:mt-4 mt-2">{aboutText}</p> <br />
+            <p className=" md:text-xl text-lg md:mt-4 mt-2">
+              I am currently a Junior Software Engineer at 
+              <a href="https://www.assistiq.ai/" className="text-secondary font-bold hover:text-offSecondary" target="_blank" rel="noopener noreferrer"> AssistIQ </a> 
+              with experience in building web APIs, working with SQL databases, and developing full stack applications! 🚀
+            </p>
+            <div className=" md:flex hidden">
+              <ResumeButton />
+            </div>
           </div>
         </div>
 
-        <div className="mt-24 lg:mt-32">
-          <SectionHeading
-            eyebrow="Experience"
-            title={<>Learning by building, one role at a time.</>}
-            description="Hands-on experience spanning product interfaces, backend systems, data, and developer tooling."
-          />
-          <Experience />
-        </div>
-
-        <div className="mt-24 lg:mt-32">
-          <SectionHeading
-            eyebrow="Toolkit"
-            title={<>Technologies I reach for.</>}
-            description="A practical toolkit shaped by coursework, professional teams, hackathons, and personal projects."
-          />
-          <Techstack />
-        </div>
+        <h1 className="text-white text-center md:text-4xl md:mt-0 mt-8 tracking-wider md text-3xl font-black">EXPERIENCE</h1>
+        <Experience />
+        <h1 className="text-white text-center md:text-4xl tracking-wider text-3xl font-black">SKILLS</h1>
+        <Techstack />
       </div>
-    </section>
-  );
-}
+    );
+  }
+  

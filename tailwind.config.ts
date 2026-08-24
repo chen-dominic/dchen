@@ -9,23 +9,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#141318",
-        secondary: "#a487cf",
-        offSecondary: "#c8b8df",
-        offPrimary: "#201f25",
-        surface: "#19181e",
-        elevated: "#26242c",
-        line: "#37343f",
-        lightText: "#d8d4dd",
-        muted: "#a9a3b0",
+        primary: '#18181c',
+        secondary: '#9a77c7',
+        offSecondary: '#b3a3c7',
+        offPrimary: '#2a2a2e',
+        lightText: "#dfdee0",
       },
-      fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
-      },
-      boxShadow: {
-        card: "0 18px 50px rgba(0, 0, 0, 0.24)",
-        accent: "0 18px 45px rgba(164, 135, 207, 0.14)",
-      },
+      fontFamily:{
+        poppins: ["Poppins", 'sans-serif'],
+      }
     },
   },
   plugins: [],

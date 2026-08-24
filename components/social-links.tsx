@@ -2,21 +2,13 @@ import socials from "../app/data/socials"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export default function SocialLinks(){
-  return (
-    <div className="flex flex-wrap items-center gap-2" aria-label="Social profiles">
-      {socials.map((social) => (
-        <a
-          key={social.name}
-          className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm font-medium text-muted transition-colors hover:bg-offPrimary hover:text-white"
-          href={social.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`${social.name} profile (opens in a new tab)`}
-        >
-          <FontAwesomeIcon icon={social.icon} className="h-4 w-4 text-secondary" />
-          <span>{social.name}</span>
-        </a>
-      ))}
-    </div>
-  );
+    return(
+        <div className="flex md:justify-start md:gap-8 md:mt-20 justify-around gap-0 mt-12">
+        {socials.map((social, index) => (
+            <a key={index} className="text-white bg-secondary rounded-full hover:-translate-y-1 transition-all p-3 flex justify-center items-center" href={social.url} target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={social.icon} className="md:w-6 md:h-6 w-4 h-4" />
+            </a>
+          ))}
+      </div>
+    )
 }

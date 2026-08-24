@@ -1,71 +1,12 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
-import { Poppins } from "next/font/google";
 import "./styles/globals.css";
+import "../fontawesome";
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
-
-const siteTitle = "Dominic Chen | Software Engineer";
-const siteDescription =
-  "Dominic Chen is a Toronto-based software engineer building thoughtful full-stack products and practical digital experiences.";
-
-export async function generateMetadata(): Promise<Metadata> {
-  const requestHeaders = await headers();
-  const forwardedHost = requestHeaders.get("x-forwarded-host")?.split(",")[0].trim();
-  const host = forwardedHost || requestHeaders.get("host") || "localhost:3000";
-  const forwardedProtocol = requestHeaders.get("x-forwarded-proto")?.split(",")[0].trim();
-  const protocol = forwardedProtocol === "http" || forwardedProtocol === "https"
-    ? forwardedProtocol
-    : host.startsWith("localhost")
-      ? "http"
-      : "https";
-
-  let metadataBase: URL;
-
-  try {
-    metadataBase = new URL(`${protocol}://${host}`);
-  } catch {
-    metadataBase = new URL("http://localhost:3000");
-  }
-
-  const socialImage = new URL("/og.png", metadataBase).toString();
-
-  return {
-    metadataBase,
-    title: {
-      default: siteTitle,
-      template: "%s | Dominic Chen",
-    },
-    description: siteDescription,
-    icons: [{ url: "/favicon.ico", rel: "icon" }],
-    alternates: { canonical: "/" },
-    openGraph: {
-      type: "website",
-      url: metadataBase,
-      siteName: "Dominic Chen",
-      title: siteTitle,
-      description: siteDescription,
-      images: [
-        {
-          url: socialImage,
-          width: 1200,
-          height: 630,
-          alt: "Dominic Chen, Software Engineer — thoughtful software for the real world.",
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: siteTitle,
-      description: siteDescription,
-      images: [socialImage],
-    },
-  };
-}
+export const metadata: Metadata = {
+  title: "Dominic Chen",
+  description: "See Dominic Chen's awesome projects!",
+  icons: [{ url: './favicon.ico', rel: 'icon' }]
+};
 
 export default function RootLayout({
   children,
@@ -74,13 +15,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} overflow-x-hidden bg-primary antialiased`}>
-        <a
-          href="#main-content"
-          className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-full bg-secondary px-5 py-3 font-semibold text-primary transition-transform focus:translate-y-0"
-        >
-          Skip to content
-        </a>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="bg-primary overflow-y-scroll overflow-x-hidden">
         {children}
       </body>
     </html>

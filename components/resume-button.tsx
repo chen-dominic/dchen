@@ -4,18 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons"
 
 export default function ResumeButton() {
-  return (
-    <Link
-      href={paths.resume}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group inline-flex min-h-12 w-fit items-center gap-3 rounded-full border border-line bg-offPrimary px-5 py-3 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:border-secondary hover:bg-elevated"
-    >
-      View resume
-      <FontAwesomeIcon
-        icon={faExternalLinkAlt}
-        className="h-4 w-4 text-secondary transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-      />
-    </Link>
-  );
+    return (
+        <Link href={paths.resume} target="_blank" className="flex w-fit outline outline-1 outline-secondary rounded-full items-center text-white md:mt-20 ml-2 mt-8 hover:bg-secondary hover:outline-none transition-colors cursor-pointer group">
+            <h1 className="md:font-semibold bg-transparent md:text-lg md:px-8 md:py-2 text-md px-6 py-0 font-medium w-fit">
+                View Resume
+            </h1>
+            <div className="px-4 py-4 md:bg-secondary bg-transparent rounded-full group-hover:bg-offSecondary transition-colors flex justify-center items-center">
+                <FontAwesomeIcon icon={faExternalLinkAlt} className="md:w-5 md:h-5 w-4 h-4" />
+            </div>
+        </Link>
+    )
 }

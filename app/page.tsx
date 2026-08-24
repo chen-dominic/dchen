@@ -7,14 +7,12 @@ import Contact from "./sections/contact";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-primary">
+    <div className="">
       <Navbar />
-      <main id="main-content">
-        <Hero />
-        <Work />
-        <About />
-        <Contact />
-      </main>
+      <Hero />
+      <About />
+      <Work />
+      <Contact />
       <Footer />
     </div>
   );
