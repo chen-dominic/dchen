@@ -30,4 +30,40 @@ html {
   ::-webkit-scrollbar-track {
     background: none;
   }
-  
+
+@keyframes workout-next {
+  from {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes workout-previous {
+  from {
+    opacity: 0;
+    transform: translateX(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-workout-next {
+  animation: workout-next 220ms ease-out;
+}
+
+.animate-workout-previous {
+  animation: workout-previous 220ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-workout-next,
+  .animate-workout-previous {
+    animation: none;
+  }
+}
