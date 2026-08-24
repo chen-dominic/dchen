@@ -1,6 +1,7 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import projects from "../app/data/projects";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
+import projects from "../app/data/projects";
 
 interface Tech {
   name: string;
@@ -8,92 +9,111 @@ interface Tech {
   iconClass: string;
 }
 
-interface Link {
+interface ProjectLink {
   url: string;
   icon: IconProp;
+  label: string;
 }
 
 interface Project {
-  github: string; // Still in the type, but unused in the UI
   techUsed: Tech[];
   thumbnail: string;
   title: string;
   subtitle: string;
-  links: Link[];
+  links: ProjectLink[];
 }
 
 interface ProjectsData {
   coding: Project[];
 }
 
-const typedProjects = projects as ProjectsData;
+const codingProjects = (projects as ProjectsData).coding;
+
+function ProjectCard({ project, featured = false }: { project: Project; featured?: boolean }) {
+  return (
+    <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-surface shadow-card transition-all duration-200 hover:-translate-y-1 hover:border-secondary/50">
+      <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-offPrimary">
+        <Image
+          src={project.thumbnail}
+          alt={`${project.title} project preview`}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.025]"
+        />
+        <div className="absolute left-4 top-4 flex flex-wrap gap-2">
+          {featured ? (
+            <span className="rounded-full bg-secondary px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-primary">
+              Featured
+            </span>
+          ) : null}
+          {project.title === "TMUCSA" ? (
+            <span className="rounded-full border border-white/15 bg-primary/90 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-lightText">
+              In progress
+            </span>
+          ) : null}
+        </div>
+      </div>
+
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
+        <h3 className="text-xl font-bold text-white sm:text-2xl">{project.title}</h3>
+        <p className="mt-3 flex-1 text-sm leading-7 text-muted">{project.subtitle}</p>
+
+        <ul className="mt-5 flex flex-wrap gap-2" aria-label={`Technologies used for ${project.title}`}>
+          {project.techUsed.map((tech) => (
+            <li key={tech.name}>
+              <a
+                href={tech.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-line bg-offPrimary px-3 py-1.5 text-xs font-medium text-lightText transition-colors hover:border-secondary hover:text-white"
+              >
+                <i className={`${tech.iconClass} text-sm text-secondary`} aria-hidden="true" />
+                {tech.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-6 flex flex-wrap gap-2 border-t border-line pt-5">
+          {project.links.map((link) => (
+            <a
+              key={`${project.title}-${link.label}`}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-10 items-center gap-2 rounded-full bg-offPrimary px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-elevated hover:text-offSecondary"
+              aria-label={`${link.label} for ${project.title} (opens in a new tab)`}
+            >
+              <FontAwesomeIcon icon={link.icon} className="h-4 w-4 text-secondary" />
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </article>
+  );
+}
 
 export default function CodeProjects() {
-  const codingProjects: Project[] = typedProjects.coding;
+  const featuredProjects = codingProjects.slice(0, 3);
+  const moreProjects = codingProjects.slice(3);
 
   return (
-    <div className="mx-0 w-screen lg:px-24 xl:px-40 h-fit items-center justify-center my-12">
-      <div className="flex flex-col items-center justify-center lg:grid lg:grid-cols-4 lg:gap-2 lg:gap-y-6">
-        {codingProjects.map((project: Project, index: number) => (
-          <div
-            className="flex flex-col overflow-hidden transition-all duration-300 rounded-xl group bg-transparent hover:bg-black hover:bg-opacity-30 w-full"
-            key={index}
-          >
-            <div className="flex items-center justify-center w-full">
-              <div className="opacity-0 group-hover:opacity-100 translate-y-20 group-hover:translate-y-0 flex flex-row transition-all duration-500 absolute z-10 py-4 px-2 gap-4">
-                {project.techUsed.map((tech: Tech, techIndex: number) => (
-                  <div
-                    className="bg-black bg-opacity-50 rounded-full px-2 py-1 flex items-center justify-center hover:bg-secondary transition-all"
-                    key={techIndex}
-                  >
-                    <a
-                      className="text-white z-10 drop-shadow-lg flex items-center justify-center h-fit"
-                      href={tech.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title={tech.name}
-                    >
-                      <i className={`${tech.iconClass} 2xl:text-2xl lg:text-2xl text-4xl`}></i>
-                    </a>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="h-[60vw] lg:h-[25vw] overflow-hidden rounded-2xl">
-              <img
-                src={project.thumbnail}
-                alt={project.title}
-                className="h-full w-full relative object-cover"
-              />
-            </div>
-            <div className="flex items-center justify-center w-full">
-              <div className="opacity-0 group-hover:opacity-100 translate-y-0 group-hover:-translate-y-8 flex flex-row transition-all duration-500 absolute z-10 py-4 px-2 gap-4">
-                {project.links.map((link: Link, linkIndex: number) => (
-                  <div
-                    className="bg-black bg-opacity-50 rounded-full flex items-center justify-center hover:bg-secondary transition-all"
-                    key={linkIndex}
-                  >
-                    <a
-                      className="text-white z-10 drop-shadow-lg flex items-center justify-center h-fit"
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FontAwesomeIcon icon={link.icon} className="h-9 w-9 lg:h-7 lg:w-7 p-2" />
-                    </a>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="bg-transparent rounded-b-2xl p-0 flex flex-col items-center overflow-visible translate-y-8 group-hover:translate-y-0 transition-all duration-300 h-40">
-              <h1 className="text-4xl group-hover:text-3xl lg:text-3xl lg:group-hover:text-2xl font-bold text-white group-hover:text-secondary font-poppins transition-all duration-300 bg-white bg-opacity-5 group-hover:bg-transparent lg:px-2 lg:py-3 text-center">
-                {project.title}
-              </h1>
-              <div className="group-hover:opacity-100 opacity-0 flex-col transition-all duration-300 px-5 text-xl lg:text-base lg:px-2">
-                <p className="text-white text-sm">{project.subtitle}</p>
-              </div>
-            </div>
-          </div>
+    <div className="mt-10">
+      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {featuredProjects.map((project) => (
+          <ProjectCard key={project.title} project={project} featured />
+        ))}
+      </div>
+
+      <div className="mt-14 flex items-center gap-4">
+        <h3 className="shrink-0 text-sm font-bold uppercase tracking-[0.18em] text-lightText">More builds</h3>
+        <div className="h-px w-full bg-line" aria-hidden="true" />
+      </div>
+
+      <div className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {moreProjects.map((project) => (
+          <ProjectCard key={project.title} project={project} />
         ))}
       </div>
     </div>

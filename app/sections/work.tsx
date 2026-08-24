@@ -1,47 +1,71 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import CodeProjects from "../../components/codeProjects";
-import ArtProjects from "../../components/artProjects";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode, faPalette } from "@fortawesome/free-solid-svg-icons";
+import CodeProjects from "../../components/codeProjects";
+import ArtProjects from "../../components/artProjects";
+import SectionHeading from "../../components/section-heading";
+
+type ProjectType = "coding" | "artwork";
 
 export default function Work() {
+  const [projectType, setProjectType] = useState<ProjectType>("coding");
 
-    const [projectType, setProjectType] = useState("coding");
-    const [fade, setFade] = useState(false);
-    const animationDuration = 200;
+  const tabs: { id: ProjectType; label: string; icon: typeof faCode }[] = [
+    { id: "coding", label: "Software", icon: faCode },
+    { id: "artwork", label: "Visual art", icon: faPalette },
+  ];
 
-    const toggleProjectType = (type: string) => {
-      if (projectType === type) return;
-      setFade(false);
-      setTimeout(() => {
-        setProjectType(type);
-        setFade(true);
-      }, animationDuration); // Duration of fade-out
-    }
+  return (
+    <section id="work" className="border-y border-line bg-offPrimary/35 px-5 py-20 sm:px-8 lg:py-28">
+      <div className="mx-auto max-w-7xl">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <SectionHeading
+            eyebrow="Selected work"
+            title={<>Projects with purpose — and a little personality.</>}
+            description="Things I built to solve a real problem, learn something new, or explore an idea that was too fun to leave alone."
+          />
 
-    useEffect(() => {
-      setFade(true);
-    }, []);
+          <div
+            className="inline-flex w-fit rounded-full border border-line bg-primary p-1.5"
+            role="tablist"
+            aria-label="Project category"
+          >
+            {tabs.map((tab) => {
+              const isActive = projectType === tab.id;
 
-    return (
-      <div className="2xl:mx-40 md:mx-24 mx-4 pt-20 flex flex-col items-center" id="Work">
-        <h1 className="text-white text-center md:text-6xl tracking-wider text-5xl md:mt-12 mt:6 font-black">MY WORK</h1>
-        <div className="bg-offPrimary rounded-full mt-8 overflow-hidden flex w-fit items-center">
-          <div  className={`flex-1 flex items-center justify-center px-4 py-2 ${projectType === "coding" ? "bg-secondary text-white" : "bg-offPrimary text-gray-400 hover:bg-primary"} cursor-pointer transition-all duration-300`} 
-                onClick={() => toggleProjectType("coding")}>
-            <FontAwesomeIcon icon={faCode} className="h-6 w-6" />
-          </div>
-          <div  className={`flex-1 flex items-center justify-center px-4 py-2 ${projectType === "artwork" ? "bg-secondary text-white" : "bg-offPrimary text-gray-400 hover:bg-primary"} cursor-pointer transition-all duration-200`} 
-                onClick={() => toggleProjectType("artwork")}>
-            <FontAwesomeIcon icon={faPalette} className="h-6 w-6" />
+              return (
+                <button
+                  key={tab.id}
+                  type="button"
+                  role="tab"
+                  id={`${tab.id}-tab`}
+                  aria-selected={isActive}
+                  aria-controls="projects-panel"
+                  onClick={() => setProjectType(tab.id)}
+                  className={`inline-flex min-h-11 items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+                    isActive
+                      ? "bg-secondary text-primary"
+                      : "text-muted hover:bg-offPrimary hover:text-white"
+                  }`}
+                >
+                  <FontAwesomeIcon icon={tab.icon} className="h-4 w-4" />
+                  {tab.label}
+                </button>
+              );
+            })}
           </div>
         </div>
-        <div className={`flex flex-col overflow-visible items-center transition-all duration-[${animationDuration}] ${fade ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-40'}`}>
+
+        <div
+          id="projects-panel"
+          role="tabpanel"
+          aria-labelledby={`${projectType}-tab`}
+        >
           {projectType === "coding" ? <CodeProjects /> : <ArtProjects />}
         </div>
       </div>
-    );
-  }
-  
+    </section>
+  );
+}

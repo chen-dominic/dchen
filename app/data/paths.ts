@@ -1,8 +1,8 @@
 const paths = {
-    resume: 'Dominic-Chen-Resume.pdf',
+    resume: '/Dominic-Chen-Resume.pdf',
     me: '/me.png',
     logo: '/logo.png',
-    meFr: '/me_profile.webp',
+    meFr: '/me-fr.webp',
     tmu: 'https://www.torontomu.ca/etc.clientlibs/ryecms/static/clientlib-site/resources/images/tmu_logo.svg',
     fgf: 'https://www.fgfbrands.com/wp-content/uploads/2021/09/FGF-Brands-Logo.png',
     chainvision: '/ChainVision.png',

@@ -5,39 +5,41 @@ import Link from "next/link";
 import navItems from "../app/data/nav-items";
 
 export default function Navbar() {
-    return (
-      <div className="md:sticky md:top-4 fixed bottom-0 
-                      flex justify-between 
-                      2xl:mx-40 2xl:my-8 2xl:py-4 
-                      md:mx-8 md:my-4 md:py-2 px-8 py-2
-                      md:w-auto w-screen
-                      font-poppins 
-                      md:bg-opacity-60 bg-black md:rounded-full 
-                      bg-opacity-80 rounded-t-3xl
-                      z-50
-                      md:hover:bg-opacity-100 transition-all duration-300">
-        <div className="flex-1 text-white md:flex hidden items-center gap-16 font-semibold text-2xl sm:text-lg">
-          <div className="w-12 h-12 sm:w-10 sm:h-10">
-            <Image 
-                src={paths.logo}
-                layout="responsive"
-                width={50}
-                height={50}
-                alt="logo"
-            />
-          </div>
-          <h1>chen-dominic</h1>
-        </div>
-        <div className="flex-1 items-center md:justify-end justify-center gap-12 flex">
-          {navItems.map((navItem, index) => (
-            <Link href={navItem.location} key={index}>
-            <div className="text-white bg-secondary rounded-full hover:text-secondary hover:bg-white transition-colors p-4 sm:p-3 flex items-center justify-center" >
-              <FontAwesomeIcon icon={navItem.icon} className="2xl:w-6 2xl:h-6 w-4 h-4" />
-            </div>
-            </Link>
-            ))}
-        </div>
-      </div>
-    );
-  }
-  
+  return (
+    <header className="sticky top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
+      <nav
+        aria-label="Primary navigation"
+        className="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-primary/95 px-3 py-2 shadow-card backdrop-blur-md sm:px-4"
+      >
+        <Link
+          href="#home"
+          className="flex shrink-0 items-center gap-3 rounded-xl pr-2 text-white"
+          aria-label="Dominic Chen, back to home"
+        >
+          <span className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-line bg-offPrimary p-1.5">
+            <Image src={paths.logo} width={36} height={36} alt="" priority />
+          </span>
+          <span className="hidden leading-tight lg:block">
+            <span className="block text-sm font-bold">Dominic Chen</span>
+            <span className="block text-[11px] font-medium text-muted">Software Engineer</span>
+          </span>
+        </Link>
+
+        <ul className="flex items-center gap-1 sm:gap-2">
+          {navItems.map((navItem) => (
+            <li key={navItem.name}>
+              <Link
+                href={navItem.location}
+                aria-label={navItem.name}
+                className="flex min-h-10 min-w-10 items-center justify-center gap-2 rounded-xl px-2.5 text-sm font-medium text-lightText transition-colors hover:bg-offPrimary hover:text-white sm:px-3"
+              >
+                <FontAwesomeIcon icon={navItem.icon} className="h-4 w-4 text-secondary" />
+                <span className="hidden md:inline">{navItem.name}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </header>
+  );
+}

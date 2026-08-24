@@ -12,7 +12,7 @@ const socials = [
     icon: faGithub,
   },
   {
-    name: 'Youtube',
+    name: 'YouTube',
     url: 'https://www.youtube.com/@dominic-cs',
     icon: faYoutube,
   },

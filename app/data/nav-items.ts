@@ -3,22 +3,22 @@ const navItems = [
   {
     name: 'Home',
     icon: faHome,
-    location: '#Home',
+    location: '#home',
   },
   {
     name: 'About',
     icon: faUser,
-    location: '#About',
+    location: '#about',
   },
   {
     name: 'Work',
     icon: faCode,
-    location: '#Work',
+    location: '#work',
   },
   {
     name: 'Contact',
     icon: faContactCard,
-    location: '#Contact',
+    location: '#contact',
   },
 ];
 
