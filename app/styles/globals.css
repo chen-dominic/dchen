@@ -44,7 +44,7 @@ section[id] {
 }
 
 .project-panel-enter {
-  animation: project-panel-enter 240ms ease-out both;
+  animation: project-panel-enter 240ms ease-out;
 }
 
 @keyframes project-panel-enter {

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import projects from "../app/data/projects";
@@ -16,8 +17,17 @@ export default function ArtProjects() {
     if (!selectedImage) return;
 
     const previousOverflow = document.body.style.overflow;
+    const previousPaddingRight = document.body.style.paddingRight;
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
     document.body.style.overflow = "hidden";
-    closeButtonRef.current?.focus();
+
+    const focusFrame = window.requestAnimationFrame(() => {
+      closeButtonRef.current?.focus({ preventScroll: true });
+    });
 
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") setSelectedImage(null);
@@ -25,9 +35,11 @@ export default function ArtProjects() {
 
     window.addEventListener("keydown", closeOnEscape);
     return () => {
+      window.cancelAnimationFrame(focusFrame);
       document.body.style.overflow = previousOverflow;
+      document.body.style.paddingRight = previousPaddingRight;
       window.removeEventListener("keydown", closeOnEscape);
-      lastTriggerRef.current?.focus();
+      lastTriggerRef.current?.focus({ preventScroll: true });
     };
   }, [selectedImage]);
 
@@ -59,9 +71,9 @@ export default function ArtProjects() {
         ))}
       </div>
 
-      {selectedImage ? (
+      {selectedImage ? createPortal(
         <div
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-[70] flex items-center justify-center overflow-y-auto overscroll-contain bg-black/85 p-4 backdrop-blur-sm"
           role="dialog"
           aria-modal="true"
           aria-labelledby="art-dialog-title"
@@ -92,7 +104,8 @@ export default function ArtProjects() {
               <p className="mt-2 text-sm leading-6 text-gray-400">{selectedImage.subtitle}</p>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body,
       ) : null}
     </>
   );
