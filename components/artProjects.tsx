@@ -1,83 +1,99 @@
-import projects from "../app/data/projects";
-import { useState, useEffect } from "react";
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import projects from "../app/data/projects";
+
+type ArtProject = (typeof projects.artwork)[number];
 
 export default function ArtProjects() {
-    const artProjects = projects.artwork;
-    const [selectedImage, setSelectedImage] = useState<{
-        imageUrl: string;
-        title: string;
-        subtitle: string;
-    } | null>(null);
-    const [isVisible, setIsVisible] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<ArtProject | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const lastTriggerRef = useRef<HTMLButtonElement | null>(null);
 
-    const handleImageClick = (project: {
-        imageUrl: string;
-        title: string;
-        subtitle: string;
-    }) => {
-        setSelectedImage(project);
-        setTimeout(() => setIsVisible(true), 0);
+  useEffect(() => {
+    if (!selectedImage) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    closeButtonRef.current?.focus();
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setSelectedImage(null);
     };
 
-    const handleClose = () => {
-        setIsVisible(false);
+    window.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+      lastTriggerRef.current?.focus();
     };
+  }, [selectedImage]);
 
-    useEffect(() => {
-        if (!isVisible && selectedImage) {
-            const timer = setTimeout(() => setSelectedImage(null), 400); // Match duration-400
-            return () => clearTimeout(timer);
-        }
-    }, [isVisible, selectedImage]);
+  return (
+    <>
+      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-5">
+        {projects.artwork.map((project) => (
+          <button
+            type="button"
+            className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 bg-offPrimary text-left transition hover:-translate-y-1 hover:border-secondary/40"
+            key={project.title}
+            onClick={(event) => {
+              lastTriggerRef.current = event.currentTarget;
+              setSelectedImage(project);
+            }}
+            aria-label={`Open ${project.title}`}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={project.imageUrl}
+              alt={project.title}
+              loading="lazy"
+              className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+            />
+            <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent px-4 pb-4 pt-12">
+              <span className="block text-sm font-bold text-white sm:text-base">{project.title}</span>
+            </span>
+          </button>
+        ))}
+      </div>
 
-    return (
-        <div className="mx-0 w-screen px-2 md:px-12 lg:px-40 h-fit items-center justify-center my-12 font-poppins">
-            <div className="grid grid-cols-2 gap-2 lg:grid-cols-3 lg:gap-2 lg:gap-y-6">
-                {artProjects.map((project, index) => (
-                    <div
-                        className="w-full h-[40vw] lg:h-[25vw] overflow-hidden cursor-pointer rounded-2xl group hover:shadow-secondary shadow-lg transition-all duration-300"
-                        key={index}
-                        onClick={() => handleImageClick(project)}
-                    >
-                        <img
-                            src={project.imageUrl}
-                            alt={project.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
-                        />
-                    </div>
-                ))}
+      {selectedImage ? (
+        <div
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="art-dialog-title"
+          onMouseDown={(event) => {
+            if (event.currentTarget === event.target) setSelectedImage(null);
+          }}
+        >
+          <div className="relative max-h-[92vh] w-full max-w-3xl overflow-auto rounded-2xl border border-white/10 bg-offPrimary shadow-2xl">
+            <button
+              ref={closeButtonRef}
+              type="button"
+              onClick={() => setSelectedImage(null)}
+              className="absolute right-3 top-3 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-black/70 text-white transition hover:bg-secondary"
+              aria-label="Close artwork preview"
+            >
+              <FontAwesomeIcon icon={faXmark} className="h-5 w-5" />
+            </button>
+            <a href={selectedImage.imageUrl} target="_blank" rel="noopener noreferrer">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={selectedImage.imageUrl}
+                alt={selectedImage.title}
+                className="max-h-[72vh] w-full bg-primary object-contain"
+              />
+            </a>
+            <div className="p-5 sm:p-6">
+              <h3 id="art-dialog-title" className="text-xl font-bold text-white">{selectedImage.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-gray-400">{selectedImage.subtitle}</p>
             </div>
-            {selectedImage && (
-                <div
-                    className={`fixed w-screen top-0 inset-0 flex items-center justify-center z-50 transition-all duration-400 bg-black bg-opacity-75 ${
-                        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-                    }`}
-                >
-                    <div className="relative w-fit rounded-xl flex">
-                        <button className="fixed top-4 right-4 md:top-8 md:right-8 lg:top-28 lg:right-40 z-50" onClick={handleClose}>
-                            <FontAwesomeIcon
-                                icon={faCircleXmark}
-                                className="w-8 h-8 md:w-12 md:h-12 lg:w-8 lg:h-8 text-white hover:text-red-300 transition-all duration-300"
-                            />
-                        </button>
-                        <a href={selectedImage.imageUrl} target="_blank">
-                            <img
-                                src={selectedImage.imageUrl}
-                                alt={selectedImage.title}
-                                className="w-[80vw] h-auto lg:w-[40vw] object-contain rounded-lg"
-                            />
-                        </a>
-                        <div className="overflow-hidden absolute top-0 left-0">
-                            <div className="text-white mt-4 max-w-80 md:max-w-96 p-2 md:p-4 bg-[#121212] h-fit w-fit opacity-80 hover:opacity-100 transition-all duration-300 rounded-r-xl -translate-x-[95%] hover:translate-x-0 cursor-pointer">
-                                <h3 className="text-base md:text-lg font-semibold lg:text-xl lg:font-bold">{selectedImage.title}</h3>
-                                <p className="text-wrap text-xs md:text-sm">{selectedImage.subtitle}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )}
+          </div>
         </div>
-    );
+      ) : null}
+    </>
+  );
 }
