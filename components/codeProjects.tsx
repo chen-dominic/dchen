@@ -1,6 +1,6 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import projects from "../app/data/projects";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import projects from "../app/data/projects";
 
 interface Tech {
   name: string;
@@ -8,94 +8,89 @@ interface Tech {
   iconClass: string;
 }
 
-interface Link {
+interface ProjectLink {
   url: string;
   icon: IconProp;
 }
 
 interface Project {
-  github: string; // Still in the type, but unused in the UI
+  github: string;
   techUsed: Tech[];
   thumbnail: string;
   title: string;
   subtitle: string;
-  links: Link[];
+  links: ProjectLink[];
 }
 
-interface ProjectsData {
-  coding: Project[];
+function getLinkLabel(url: string) {
+  if (url.includes("github.com")) return "GitHub";
+  if (url.includes("youtube.com")) return "Demo";
+  if (url.includes("devpost.com")) return "Devpost";
+  return "Live site";
 }
-
-const typedProjects = projects as ProjectsData;
 
 export default function CodeProjects() {
-  const codingProjects: Project[] = typedProjects.coding;
+  const codingProjects = projects.coding as Project[];
 
   return (
-    <div className="mx-0 w-screen lg:px-24 xl:px-40 h-fit items-center justify-center my-12">
-      <div className="flex flex-col items-center justify-center lg:grid lg:grid-cols-4 lg:gap-2 lg:gap-y-6">
-        {codingProjects.map((project: Project, index: number) => (
-          <div
-            className="flex flex-col overflow-hidden transition-all duration-300 rounded-xl group bg-transparent hover:bg-black hover:bg-opacity-30 w-full"
-            key={index}
-          >
-            <div className="flex items-center justify-center w-full">
-              <div className="opacity-0 group-hover:opacity-100 translate-y-20 group-hover:translate-y-0 flex flex-row transition-all duration-500 absolute z-10 py-4 px-2 gap-4">
-                {project.techUsed.map((tech: Tech, techIndex: number) => (
-                  <div
-                    className="bg-black bg-opacity-50 rounded-full px-2 py-1 flex items-center justify-center hover:bg-secondary transition-all"
-                    key={techIndex}
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {codingProjects.map((project) => (
+        <article
+          className="group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-offPrimary transition hover:-translate-y-1 hover:border-secondary/35 hover:shadow-xl hover:shadow-black/20"
+          key={project.title}
+        >
+          <div className="aspect-[16/10] overflow-hidden bg-primary">
+            {/* Remote project images come from several hosts, so a native image keeps the data source flexible. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={project.thumbnail}
+              alt={`${project.title} project preview`}
+              loading="lazy"
+              className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+            />
+          </div>
+
+          <div className="flex flex-1 flex-col p-5">
+            <h3 className="text-xl font-bold text-white">{project.title}</h3>
+            <p className="mt-2 flex-1 text-sm leading-6 text-gray-400">{project.subtitle}</p>
+
+            <ul className="mt-5 flex flex-wrap gap-2" aria-label={`Technologies used for ${project.title}`}>
+              {project.techUsed.map((tech) => (
+                <li key={tech.name}>
+                  <a
+                    href={tech.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-primary/80 px-2.5 py-1 text-[11px] font-medium text-gray-300 transition hover:text-white"
                   >
-                    <a
-                      className="text-white z-10 drop-shadow-lg flex items-center justify-center h-fit"
-                      href={tech.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title={tech.name}
-                    >
-                      <i className={`${tech.iconClass} 2xl:text-2xl lg:text-2xl text-4xl`}></i>
-                    </a>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="h-[60vw] lg:h-[25vw] overflow-hidden rounded-2xl">
-              <img
-                src={project.thumbnail}
-                alt={project.title}
-                className="h-full w-full relative object-cover"
-              />
-            </div>
-            <div className="flex items-center justify-center w-full">
-              <div className="opacity-0 group-hover:opacity-100 translate-y-0 group-hover:-translate-y-8 flex flex-row transition-all duration-500 absolute z-10 py-4 px-2 gap-4">
-                {project.links.map((link: Link, linkIndex: number) => (
-                  <div
-                    className="bg-black bg-opacity-50 rounded-full flex items-center justify-center hover:bg-secondary transition-all"
-                    key={linkIndex}
+                    <i aria-hidden="true" className={`${tech.iconClass} text-secondary`} />
+                    {tech.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-5 flex flex-wrap gap-2 border-t border-white/10 pt-4">
+              {project.links.map((link) => {
+                const label = getLinkLabel(link.url);
+                return (
+                  <a
+                    key={link.url}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${project.title} on ${label} (opens in a new tab)`}
+                    className="inline-flex min-h-9 items-center gap-2 rounded-lg px-2.5 text-xs font-semibold text-lightText transition hover:bg-primary hover:text-secondary"
                   >
-                    <a
-                      className="text-white z-10 drop-shadow-lg flex items-center justify-center h-fit"
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FontAwesomeIcon icon={link.icon} className="h-9 w-9 lg:h-7 lg:w-7 p-2" />
-                    </a>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="bg-transparent rounded-b-2xl p-0 flex flex-col items-center overflow-visible translate-y-8 group-hover:translate-y-0 transition-all duration-300 h-40">
-              <h1 className="text-4xl group-hover:text-3xl lg:text-3xl lg:group-hover:text-2xl font-bold text-white group-hover:text-secondary font-poppins transition-all duration-300 bg-white bg-opacity-5 group-hover:bg-transparent lg:px-2 lg:py-3 text-center">
-                {project.title}
-              </h1>
-              <div className="group-hover:opacity-100 opacity-0 flex-col transition-all duration-300 px-5 text-xl lg:text-base lg:px-2">
-                <p className="text-white text-sm">{project.subtitle}</p>
-              </div>
+                    <FontAwesomeIcon icon={link.icon} className="h-4 w-4" />
+                    {label}
+                  </a>
+                );
+              })}
             </div>
           </div>
-        ))}
-      </div>
+        </article>
+      ))}
     </div>
   );
 }
